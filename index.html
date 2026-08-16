@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HOME GUARD | Global Smart Infrastructure</title>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;700;800;900&display=swap" rel="stylesheet">
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* === Ultra Enterprise Theme Variables === */
         :root {
             --bg-deep: #020617;
-            --bg-card: rgba(15, 23, 42, 0.6);
+            --bg-card: rgba(15, 23, 42, 0.7);
             --bg-card-solid: #0f172a;
             --primary-cyan: #00e5ff;
             --primary-blue: #2962ff;
@@ -20,6 +20,7 @@
             --text-muted: #94a3b8;
             --border-glow: rgba(0, 229, 255, 0.4);
             --accent-gradient: linear-gradient(135deg, #00e5ff, #2962ff);
+            --fire-gradient: linear-gradient(135deg, #ff3d00, #ffb300);
             --gold-star: #ffb300;
         }
 
@@ -61,27 +62,27 @@
         }
         .btn-primary:hover { box-shadow: 0 0 25px var(--primary-cyan); transform: translateY(-3px); }
 
-        /* === Hero Section === */
+        /* === Hero Section (WITH BACKGROUND IMAGE) === */
         .hero {
             min-height: 100vh; display: flex; align-items: center; padding: 0 8%;
-            background: radial-gradient(circle at 85% 50%, rgba(0, 229, 255, 0.15), transparent 40%),
-                        radial-gradient(circle at 15% 80%, rgba(41, 98, 255, 0.15), transparent 40%);
+            background: linear-gradient(to right, rgba(2, 6, 23, 0.95) 40%, rgba(2, 6, 23, 0.3)), 
+                        url('https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=2070&auto=format&fit=crop') center/cover;
             position: relative;
         }
         .hero-content { max-width: 850px; z-index: 2; margin-top: 60px; }
         .badge {
-            display: inline-block; padding: 8px 20px; background: rgba(0, 229, 255, 0.1);
+            display: inline-block; padding: 8px 20px; background: rgba(0, 229, 255, 0.15);
             border: 1px solid var(--border-glow); border-radius: 50px; color: var(--primary-cyan);
             font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 25px;
-            box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.2); backdrop-filter: blur(5px);
         }
-        .hero-content h1 { font-size: 5.5rem; line-height: 1.05; margin-bottom: 30px; letter-spacing: -1px; }
+        .hero-content h1 { font-size: 5.5rem; line-height: 1.05; margin-bottom: 30px; letter-spacing: -1px; text-shadow: 0 5px 15px rgba(0,0,0,0.5); }
         .hero-content h1 span { background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero-content p { font-size: 1.3rem; color: var(--text-muted); margin-bottom: 50px; max-width: 700px; font-weight: 300; }
+        .hero-content p { font-size: 1.3rem; color: #e2e8f0; margin-bottom: 50px; max-width: 700px; font-weight: 400; text-shadow: 0 2px 10px rgba(0,0,0,0.8); }
 
-        .stats-bar { display: flex; gap: 50px; border-left: 3px solid var(--primary-cyan); padding-left: 25px; }
-        .stat-item h4 { font-size: 2.5rem; color: #fff; line-height: 1; margin-bottom: 5px; }
-        .stat-item p { color: var(--primary-cyan); font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+        .stats-bar { display: flex; gap: 50px; border-left: 3px solid var(--primary-cyan); padding-left: 25px; background: rgba(2,6,23,0.4); padding: 20px 30px; border-radius: 8px; backdrop-filter: blur(10px); display: inline-flex;}
+        .stat-item h4 { font-size: 2.2rem; color: #fff; line-height: 1; margin-bottom: 5px; }
+        .stat-item p { color: var(--primary-cyan); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
 
         /* === Global Sections === */
         .section-pad { padding: 120px 8%; }
@@ -140,7 +141,6 @@
         .review-text { font-size: 1.05rem; font-style: italic; color: var(--text-main); margin-bottom: 30px; line-height: 1.8; }
         
         .client-info { display: flex; align-items: center; gap: 15px; }
-        /* Smart Crop for Client Images */
         .client-img-wrapper {
             width: 60px; height: 60px; border-radius: 50%; overflow: hidden;
             border: 2px solid var(--primary-blue); padding: 2px;
@@ -149,7 +149,7 @@
         .client-info h4 { font-size: 1.2rem; margin-bottom: 2px; }
         .client-info p { font-size: 0.85rem; color: var(--primary-cyan); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* === Team Section (Smart Cropping Intact) === */
+        /* === Team Section === */
         .team { border-top: 1px solid rgba(255,255,255,0.02); }
         .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; }
         
@@ -173,14 +173,12 @@
         }
         .team-card:hover .team-img-wrapper { transform: scale(1.05); box-shadow: 0 0 20px rgba(0, 229, 255, 0.4); }
         .supervisor-card .team-img-wrapper { width: 180px; height: 180px; }
-        
         .team-img-wrapper img { width: 100%; height: 100%; object-fit: cover; object-position: center top; border-radius: 50%; }
-
         .team-card h3 { font-size: 1.6rem; margin-bottom: 8px; }
         .team-role { color: var(--primary-cyan); font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; display: block; }
         .team-tasks { font-size: 1rem; color: var(--text-muted); font-weight: 300; }
 
-        /* === Modal System === */
+        /* === NEW MODAL SYSTEM (Case Study Style) === */
         .modal-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(2, 6, 23, 0.98);
             z-index: 2000; display: none; opacity: 0; transition: opacity 0.3s ease; overflow-y: auto; padding: 40px 8%;
@@ -190,13 +188,35 @@
             position: fixed; top: 30px; right: 5%; font-size: 30px; color: #fff; cursor: pointer; z-index: 2001;
             width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.5); backdrop-filter: blur(5px); transition: 0.3s;
         }
-        .modal-close:hover { background: var(--primary-cyan); border: none; color: #000; transform: rotate(90deg); }
+        .modal-close:hover { background: var(--fire-gradient); border: none; color: #fff; transform: rotate(90deg); box-shadow: 0 0 20px #ff3d00; }
+        
         .modal-content { max-width: 1200px; margin: 0 auto; background: var(--bg-card-solid); border-radius: 12px; overflow: hidden; padding-bottom: 50px; animation: slideUp 0.5s ease; border: 1px solid rgba(0, 229, 255, 0.2); box-shadow: 0 30px 60px rgba(0,0,0,0.8); }
         @keyframes slideUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-        .modal-hero-img { width: 100%; height: 600px; object-fit: cover; }
+        .modal-hero-img { width: 100%; height: 500px; object-fit: cover; }
         .modal-body { padding: 60px; }
-        .modal-body h2 { font-size: 3.5rem; margin-bottom: 15px; }
-        .modal-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+        .modal-body h2 { font-size: 3.5rem; margin-bottom: 15px; line-height: 1.1; }
+        
+        /* Modal Case Study Grid */
+        .case-study-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; margin-bottom: 50px; }
+        .detail-box { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 30px; border-radius: 8px; }
+        .detail-box h4 { font-size: 1.3rem; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .detail-box h4 i { font-size: 1.5rem; }
+        .detail-box p { color: var(--text-muted); font-size: 1.05rem; line-height: 1.8; }
+        
+        /* The "Fire" Highlight Box */
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(255, 61, 0, 0.05), rgba(255, 179, 0, 0.05));
+            border: 1px solid rgba(255, 61, 0, 0.4);
+            position: relative; overflow: hidden;
+        }
+        .highlight-box::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--fire-gradient);
+        }
+        .highlight-box h4 { color: #ffb300; text-shadow: 0 0 10px rgba(255, 61, 0, 0.3); }
+        .highlight-box h4 i { background: var(--fire-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .highlight-box p { color: #f8fafc; font-weight: 500; }
+
+        .modal-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 20px; }
         .modal-gallery img { width: 100%; height: 280px; object-fit: cover; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); }
 
         /* === Footer === */
@@ -240,14 +260,14 @@
             <h1>The Future of <br><span>Smart Security.</span></h1>
             <p>We engineer intelligent, life-saving infrastructures. H2X integrations, localized RTOS processing, and military-grade network isolation for global enterprises.</p>
             <a href="#portfolio" class="btn-primary" style="display: inline-block; margin-top: 15px;">View Global Projects</a>
-            
+            <br>
             <div class="stats-bar">
                 <div class="stat-item">
                     <h4>99.9%</h4>
                     <p>System Uptime</p>
                 </div>
                 <div class="stat-item">
-                    <h4>Zero</h4>
+                    <h4>0ms</h4>
                     <p>Cloud Latency</p>
                 </div>
                 <div class="stat-item">
@@ -288,74 +308,68 @@
     <section class="section-pad" id="portfolio">
         <div class="section-header fade-in">
             <h2 class="section-title">Global <span>Deployments</span></h2>
-            <p class="section-subtitle">Scalable infrastructure implementations across residential complexes, commercial hubs, and healthcare facilities.</p>
+            <p class="section-subtitle">Click on any project to view the engineering challenges we faced, the technologies deployed, and our unique edge.</p>
         </div>
         
         <div class="grid-3">
-            <!-- Project 1 -->
             <div class="project-card fade-in" onclick="openModal(1)">
                 <div class="project-img-wrapper"><img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2000&auto=format&fit=crop" class="project-img" alt="Azure Villa"></div>
                 <div class="project-info">
                     <span class="project-tag">Luxury Residential</span>
                     <h3>The Azure Villa Complex</h3>
                     <p style="color: var(--text-muted); font-size: 1rem;">Full integration of climate control, automated perimeter security, and offline fallback systems.</p>
-                    <span class="view-btn">EXPLORE SYSTEM <i class="fa-solid fa-arrow-right"></i></span>
+                    <span class="view-btn">VIEW CASE STUDY <i class="fa-solid fa-arrow-right"></i></span>
                 </div>
             </div>
-            <!-- Project 2 -->
             <div class="project-card fade-in" onclick="openModal(2)">
                 <div class="project-img-wrapper"><img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=2000&auto=format&fit=crop" class="project-img" alt="Accessible Apartment"></div>
                 <div class="project-info">
                     <span class="project-tag">Healthcare Sector</span>
                     <h3>Adaptive Smart Facility</h3>
                     <p style="color: var(--text-muted); font-size: 1rem;">Designed for independent living with fall detection sensors and one-touch medical emergency alerts.</p>
-                    <span class="view-btn">EXPLORE SYSTEM <i class="fa-solid fa-arrow-right"></i></span>
+                    <span class="view-btn">VIEW CASE STUDY <i class="fa-solid fa-arrow-right"></i></span>
                 </div>
             </div>
-            <!-- Project 3 -->
             <div class="project-card fade-in" onclick="openModal(3)">
                 <div class="project-img-wrapper"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000&auto=format&fit=crop" class="project-img" alt="Nexus Hub"></div>
                 <div class="project-info">
                     <span class="project-tag">Enterprise / Commercial</span>
                     <h3>Nexus Corporate Hub</h3>
                     <p style="color: var(--text-muted); font-size: 1rem;">Enterprise-grade fire prevention, automated access control, and energy management for modern workspaces.</p>
-                    <span class="view-btn">EXPLORE SYSTEM <i class="fa-solid fa-arrow-right"></i></span>
+                    <span class="view-btn">VIEW CASE STUDY <i class="fa-solid fa-arrow-right"></i></span>
                 </div>
             </div>
-            <!-- Project 4 -->
             <div class="project-card fade-in" onclick="openModal(4)">
                 <div class="project-img-wrapper"><img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=2000&auto=format&fit=crop" class="project-img" alt="Pearl Resort"></div>
                 <div class="project-info">
                     <span class="project-tag">Hospitality Safety</span>
                     <h3>Pearl Seaside Resort</h3>
                     <p style="color: var(--text-muted); font-size: 1rem;">Centralized H2X emergency integration across 120 suites, ensuring instant civil defense response.</p>
-                    <span class="view-btn">EXPLORE SYSTEM <i class="fa-solid fa-arrow-right"></i></span>
+                    <span class="view-btn">VIEW CASE STUDY <i class="fa-solid fa-arrow-right"></i></span>
                 </div>
             </div>
-            <!-- Project 5 -->
             <div class="project-card fade-in" onclick="openModal(5)">
                 <div class="project-img-wrapper"><img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2000&auto=format&fit=crop" class="project-img" alt="Smart Compound"></div>
                 <div class="project-info">
                     <span class="project-tag">Gated Community</span>
                     <h3>Cairo Smart Compound</h3>
                     <p style="color: var(--text-muted); font-size: 1rem;">VLAN-isolated infrastructure linking 50+ homes to a central security and ambulance dispatch node.</p>
-                    <span class="view-btn">EXPLORE SYSTEM <i class="fa-solid fa-arrow-right"></i></span>
+                    <span class="view-btn">VIEW CASE STUDY <i class="fa-solid fa-arrow-right"></i></span>
                 </div>
             </div>
-            <!-- Project 6 -->
             <div class="project-card fade-in" onclick="openModal(6)">
                 <div class="project-img-wrapper"><img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2000&auto=format&fit=crop" class="project-img" alt="ElderCare Facility"></div>
                 <div class="project-info">
                     <span class="project-tag">Assisted Living</span>
                     <h3>ElderCare System</h3>
                     <p style="color: var(--text-muted); font-size: 1rem;">Extensive RTOS-based health monitoring and automatic lock-release during medical emergencies.</p>
-                    <span class="view-btn">EXPLORE SYSTEM <i class="fa-solid fa-arrow-right"></i></span>
+                    <span class="view-btn">VIEW CASE STUDY <i class="fa-solid fa-arrow-right"></i></span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section (6 Reviews) -->
+    <!-- Testimonials Section -->
     <section class="section-pad testimonials" id="reviews">
         <div class="section-header fade-in">
             <h2 class="section-title">Verified <span>Trust</span></h2>
@@ -372,7 +386,6 @@
                     <div><h4>Yousef El-Sweisy</h4><p>Villa Owner</p></div>
                 </div>
             </div>
-
             <div class="review-card fade-in">
                 <i class="fa-solid fa-quote-right quote-icon"></i>
                 <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
@@ -382,7 +395,6 @@
                     <div><h4>Sarah El-Din</h4><p>Apartment Resident</p></div>
                 </div>
             </div>
-
             <div class="review-card fade-in">
                 <i class="fa-solid fa-quote-right quote-icon"></i>
                 <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
@@ -392,7 +404,6 @@
                     <div><h4>Tarek Hassan</h4><p>Facility Manager</p></div>
                 </div>
             </div>
-
             <div class="review-card fade-in">
                 <i class="fa-solid fa-quote-right quote-icon"></i>
                 <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
@@ -402,7 +413,6 @@
                     <div><h4>Momen Mostafa</h4><p>Real Estate Developer</p></div>
                 </div>
             </div>
-
             <div class="review-card fade-in">
                 <i class="fa-solid fa-quote-right quote-icon"></i>
                 <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
@@ -412,7 +422,6 @@
                     <div><h4>Mahmoud Abdelrasoul</h4><p>Homeowner</p></div>
                 </div>
             </div>
-
             <div class="review-card fade-in">
                 <i class="fa-solid fa-quote-right quote-icon"></i>
                 <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
@@ -433,44 +442,38 @@
         </div>
         
         <div class="team-grid">
-            <!-- General Supervisor (Ahmad Gamal) -->
             <div class="team-card supervisor-card fade-in">
-                <div class="team-img-wrapper"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=500&auto=format&fit=crop" alt="Ahmad Gamal"></div>
+                <div class="team-img-wrapper"><img src="ahmad.jpg" alt="Ahmad Gamal"></div>
                 <h3>Eng. Ahmad Gamal</h3>
                 <span class="team-role">General Supervisor & Project Director</span>
                 <p class="team-tasks">Directing global operations, beta deployments, strategic marketing, and high-level stakeholder alignment for enterprise launches.</p>
             </div>
-
             <div class="team-card fade-in">
-                <div class="team-img-wrapper"><img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=500&auto=format&fit=crop" alt="Eslam Ashraf"></div>
+                <div class="team-img-wrapper"><img src="eslam.jpg" alt="Eslam Ashraf"></div>
                 <h3>Eng. Eslam Ashraf</h3>
                 <span class="team-role">Project Manager (Software)</span>
                 <p class="team-tasks">Overseeing core system architecture, API infrastructure, and real-time backend deployment.</p>
             </div>
-
             <div class="team-card fade-in">
-                <div class="team-img-wrapper"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=500&auto=format&fit=crop" alt="Hatem Saied"></div>
+                <div class="team-img-wrapper"><img src="hatem.jpg" alt="Hatem Saied"></div>
                 <h3>Eng. Hatem Saied</h3>
                 <span class="team-role">Project Manager (Hardware)</span>
                 <p class="team-tasks">Managing physical IoT supply chains, sensor node placements, and industrial automation.</p>
             </div>
-
             <div class="team-card fade-in">
-                <div class="team-img-wrapper"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=500&auto=format&fit=crop" alt="Mostafa Essam"></div>
+                <div class="team-img-wrapper"><img src="mostafa.jpg" alt="Mostafa Essam"></div>
                 <h3>Eng. Mostafa Essam</h3>
                 <span class="team-role">Project Manager (QA & Approvals)</span>
                 <p class="team-tasks">Enforcing ISO standards, conducting stress tests, and securing civil defense certifications.</p>
             </div>
-
             <div class="team-card fade-in">
-                <div class="team-img-wrapper"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=500&auto=format&fit=crop" alt="Ahmed Mohamed"></div>
+                <div class="team-img-wrapper"><img src="ahmed.jpg" alt="Ahmed Mohamed"></div>
                 <h3>Eng. Ahmed Mohamed</h3>
                 <span class="team-role">Project Manager (Operations)</span>
                 <p class="team-tasks">Driving critical path execution and cross-departmental risk mitigation strategies.</p>
             </div>
-
             <div class="team-card fade-in">
-                <div class="team-img-wrapper"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=500&auto=format&fit=crop" alt="Alaa Ashraf"></div>
+                <div class="team-img-wrapper"><img src="alaa.jpg" alt="Alaa Ashraf"></div>
                 <h3>Eng. Alaa Ashraf</h3>
                 <span class="team-role">Project Manager (Logistics)</span>
                 <p class="team-tasks">Controlling resource allocations, budget pipelines, and international logistics.</p>
@@ -478,7 +481,7 @@
         </div>
     </section>
 
-    <!-- Modal System for 6 Projects -->
+    <!-- NEW MODAL SYSTEM (Case Study) -->
     <div class="modal-overlay" id="projectModal">
         <div class="modal-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></div>
         <div class="modal-content">
@@ -486,8 +489,24 @@
             <div class="modal-body">
                 <span class="project-tag" id="modalTag" style="color: var(--primary-cyan); font-weight: 800; font-size: 1.1rem; letter-spacing: 2px;"></span>
                 <h2 id="modalTitle"></h2>
-                <p id="modalDesc" style="color: var(--text-muted); font-size: 1.25rem; line-height: 1.8; font-weight: 300;"></p>
-                <h3 style="margin-top: 50px; padding-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: 2rem;">Implementation Gallery</h3>
+                
+                <!-- The 3-Part Case Study Detail Grid -->
+                <div class="case-study-grid">
+                    <div class="detail-box">
+                        <h4><i class="fa-solid fa-triangle-exclamation" style="color: #ff3d00;"></i> The Challenge</h4>
+                        <p id="modalChallenge"></p>
+                    </div>
+                    <div class="detail-box">
+                        <h4><i class="fa-solid fa-microchip" style="color: var(--primary-cyan);"></i> Technologies Used</h4>
+                        <p id="modalTech"></p>
+                    </div>
+                    <div class="detail-box highlight-box">
+                        <h4><i class="fa-solid fa-fire-flame-curved"></i> The "Home Guard" Edge</h4>
+                        <p id="modalUnique"></p>
+                    </div>
+                </div>
+
+                <h3 style="padding-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: 2rem;">Implementation Gallery</h3>
                 <div class="modal-gallery" id="modalGallery"></div>
             </div>
         </div>
@@ -516,7 +535,6 @@
 
     <!-- JavaScript -->
     <script>
-        // Navbar Scrolled Effect
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('navbar');
             if (window.scrollY > 50) {
@@ -528,7 +546,6 @@
             }
         });
 
-        // Intersection Observer for scroll animations
         const faders = document.querySelectorAll('.fade-in');
         const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
         const appearOnScroll = new IntersectionObserver((entries, observer) => {
@@ -540,14 +557,56 @@
         }, appearOptions);
         faders.forEach(fader => { appearOnScroll.observe(fader); });
 
-        // Modal Logic for 6 Projects
+        // === UPGRADED PROJECT DATA (Challenges, Tech, The Edge) ===
         const projectData = {
-            1: { title: "The Azure Villa Complex", tag: "Luxury Residential", img: "https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2000&auto=format&fit=crop", desc: "A massive deployment of Home Guard's smart infrastructure across a 5-villa luxury compound. The project required deep integration of climate control, automated perimeter security, and our proprietary offline fallback systems to ensure 24/7 operability regardless of local grid stability.", gallery: ["https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop", "https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=800&auto=format&fit=crop", "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop"] },
-            2: { title: "Adaptive Smart Facility", tag: "Healthcare Sector", img: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=2000&auto=format&fit=crop", desc: "Designed from the ground up for independent living and healthcare integration. This project features highly sensitive fall detection sensors, comprehensive voice-activated utilities, and a one-touch medical emergency alert system that bypasses mobile networks via H2X protocols.", gallery: ["https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?q=80&w=800&auto=format&fit=crop", "https://images.unsplash.com/photo-1556912167-f556f1f39fdf?q=80&w=800&auto=format&fit=crop", "https://images.unsplash.com/photo-1615873968403-89e068629265?q=80&w=800&auto=format&fit=crop"] },
-            3: { title: "Nexus Corporate Hub", tag: "Enterprise / Commercial", img: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000&auto=format&fit=crop", desc: "An enterprise-grade execution for a 3-story commercial tech hub. We implemented isolated VLAN networks for their fire prevention systems, automated access controls for 300+ employees, and real-time energy management running on localized RTOS microcontrollers.", gallery: ["https://images.unsplash.com/photo-1497215842964-222b330d4104?q=80&w=800&auto=format&fit=crop", "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=800&auto=format&fit=crop", "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=800&auto=format&fit=crop"] },
-            4: { title: "Pearl Seaside Resort", tag: "Hospitality Safety", img: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=2000&auto=format&fit=crop", desc: "Upgrading legacy hospitality infrastructure to modern smart safety standards. 120 suites were equipped with hidden smoke, thermal, and water-leak sensors, all communicating instantly with the resort's central security desk and local civil defense.", gallery: ["https://images.unsplash.com/photo-1618773928120-2c7bb1ad53d4?q=80&w=800&auto=format&fit=crop", "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?q=80&w=800&auto=format&fit=crop", "https://images.unsplash.com/photo-1564501049412-61c2a3083791?q=80&w=800&auto=format&fit=crop"] },
-            5: { title: "Cairo Smart Compound", tag: "Gated Community", img: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2000&auto=format&fit=crop", desc: "A massive networked undertaking connecting over 50 individual residential units into a single, highly secure intranet. The system isolates private home data while allowing unified emergency dispatch protocols for compound security and incoming ambulances.", gallery: ["https://images.unsplash.com/photo-1449844908441-8829872d2607?q=80&w=800&auto=format&fit=crop", "https://images.unsplash.com/photo-1605276374104-a64115b713e4?q=80&w=800&auto=format&fit=crop", "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800&auto=format&fit=crop"] },
-            6: { title: "ElderCare Facility System", tag: "Assisted Living", img: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2000&auto=format&fit=crop", desc: "A highly sensitive deployment in an assisted living facility. Included heart-rate anomaly triggers, bathroom slip-and-fall detection, and an automatic door-lock release system to allow medical staff instant access to a patient's room during a flagged emergency.", gallery: ["https://images.unsplash.com/photo-1538108149393-fbbd81895907?q=80&w=800&auto=format&fit=crop", "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop", "https://images.unsplash.com/photo-1551281030-c752c0f99485?q=80&w=800&auto=format&fit=crop"] }
+            1: { 
+                title: "The Azure Villa Complex", tag: "Luxury Residential", 
+                img: "https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2000&auto=format&fit=crop", 
+                challenge: "Highly unstable local power grid and massive square footage requiring seamless sensor networking without dead zones.",
+                tech: "Custom STM32-based RTOS controllers, LoRaWAN for long-range sensor communication, and VLAN isolated networks.",
+                unique: "100% Offline Operability. If the national grid completely fails, our proprietary micro-grid fallback keeps the villa's hazard detection and security perimeter fully functional without a single millisecond of downtime.",
+                gallery: ["https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop", "https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=800&auto=format&fit=crop", "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop"] 
+            },
+            2: { 
+                title: "Adaptive Smart Facility", tag: "Healthcare Sector", 
+                img: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=2000&auto=format&fit=crop", 
+                challenge: "High sensitivity to false positives in fall detection, and an absolute zero-latency requirement for medical dispatch.",
+                tech: "AI-driven biometric sensors, H2X dispatch engine, and localized edge computing.",
+                unique: "Bypassing Telecom Delays. Our system talks directly to paramedic dispatch APIs in milliseconds, automatically transmitting the patient's exact room coordinates and medical profile, saving critical minutes during cardiac events.",
+                gallery: ["https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?q=80&w=800&auto=format&fit=crop", "https://images.unsplash.com/photo-1556912167-f556f1f39fdf?q=80&w=800&auto=format&fit=crop", "https://images.unsplash.com/photo-1615873968403-89e068629265?q=80&w=800&auto=format&fit=crop"] 
+            },
+            3: { 
+                title: "Nexus Corporate Hub", tag: "Enterprise / Commercial", 
+                img: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000&auto=format&fit=crop", 
+                challenge: "Managing 300+ employees with complex access hierarchies while maintaining strict corporate data compliance against cyber threats.",
+                tech: "Enterprise-grade firewalls, biometric access nodes, and energy-optimization algorithms.",
+                unique: "The Ultimate Dashboard. We unified fire safety, physical access control, and HVAC into a single impenetrable VLAN architecture, successfully reducing the corporation's insurance premiums by 40%.",
+                gallery: ["https://images.unsplash.com/photo-1497215842964-222b330d4104?q=80&w=800&auto=format&fit=crop", "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=800&auto=format&fit=crop", "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=800&auto=format&fit=crop"] 
+            },
+            4: { 
+                title: "Pearl Seaside Resort", tag: "Hospitality Safety", 
+                img: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=2000&auto=format&fit=crop", 
+                challenge: "High humidity environment damaging standard sensors, massive scale (120 suites), and absolute guest privacy concerns.",
+                tech: "IP67-rated industrial sensors, anonymized thermal imaging, and a centralized RTOS hub.",
+                unique: "Invisible Safety. There are zero cameras inside the suites, yet the system detects fires and leaks instantly. Upon detection, it automatically initiates evacuation routing via smart corridor lighting to guide guests to safety.",
+                gallery: ["https://images.unsplash.com/photo-1618773928120-2c7bb1ad53d4?q=80&w=800&auto=format&fit=crop", "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?q=80&w=800&auto=format&fit=crop", "https://images.unsplash.com/photo-1564501049412-61c2a3083791?q=80&w=800&auto=format&fit=crop"] 
+            },
+            5: { 
+                title: "Cairo Smart Compound", tag: "Gated Community", 
+                img: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2000&auto=format&fit=crop", 
+                challenge: "Integrating 50 independent units while maintaining centralized security dispatch without compromising individual home data privacy.",
+                tech: "Multi-tenant cloud architecture, end-to-end AES-256 encryption, and automated gate protocols.",
+                unique: "Military-Grade Compartmentalization. A cyber breach in one home's local network mathematically cannot spread to the compound's master grid, ensuring community-wide safety remains uncompromised.",
+                gallery: ["https://images.unsplash.com/photo-1449844908441-8829872d2607?q=80&w=800&auto=format&fit=crop", "https://images.unsplash.com/photo-1605276374104-a64115b713e4?q=80&w=800&auto=format&fit=crop", "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800&auto=format&fit=crop"] 
+            },
+            6: { 
+                title: "ElderCare System", tag: "Assisted Living", 
+                img: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2000&auto=format&fit=crop", 
+                challenge: "Fragile residents requiring instant response to complex medical emergency scenarios without wearing bulky devices.",
+                tech: "Heart-rate anomaly triggers, smart-lock API integrations, and wearable-to-infrastructure sync.",
+                unique: "Automatic Physical Access. If a patient collapses, the system automatically unlocks their specific door for medics and locks off non-essential zones, guiding the response team directly to the patient without key delays.",
+                gallery: ["https://images.unsplash.com/photo-1538108149393-fbbd81895907?q=80&w=800&auto=format&fit=crop", "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop", "https://images.unsplash.com/photo-1551281030-c752c0f99485?q=80&w=800&auto=format&fit=crop"] 
+            }
         };
 
         const modal = document.getElementById('projectModal');
@@ -556,7 +615,11 @@
             document.getElementById('modalHeroImg').src = data.img;
             document.getElementById('modalTag').innerText = data.tag;
             document.getElementById('modalTitle').innerText = data.title;
-            document.getElementById('modalDesc').innerText = data.desc;
+            
+            // Populate the new Case Study fields
+            document.getElementById('modalChallenge').innerText = data.challenge;
+            document.getElementById('modalTech').innerText = data.tech;
+            document.getElementById('modalUnique').innerText = data.unique;
             
             const galleryDiv = document.getElementById('modalGallery');
             galleryDiv.innerHTML = '';
