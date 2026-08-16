@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HOME GUARD | Elite Smart Infrastructure</title>
-    <!-- Premium Fonts: Montserrat for Headings, Inter for Body -->
+    <!-- Premium Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;700;800;900&display=swap" rel="stylesheet">
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -53,23 +53,27 @@
         nav {
             position: fixed; top: 0; width: 100%; padding: 20px 8%;
             display: flex; justify-content: space-between; align-items: center;
-            background: rgba(10, 17, 40, 0.75); backdrop-filter: blur(25px);
+            background: rgba(10, 17, 40, 0.85); backdrop-filter: blur(25px);
             border-bottom: 1px solid var(--glass-border); z-index: 1000;
             transition: all 0.3s ease; box-shadow: 0 4px 30px rgba(0,0,0,0.3);
         }
-        .logo { font-size: 26px; font-weight: 900; letter-spacing: 1px; display: flex; align-items: center; gap: 12px; }
-        .logo i { background: var(--gradient-text); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 32px; filter: drop-shadow(0 0 8px var(--primary-cyan));}
-        .nav-links { list-style: none; display: flex; gap: 40px; }
+        .logo { font-size: 24px; font-weight: 900; letter-spacing: 1px; display: flex; align-items: center; gap: 10px; z-index: 1001; }
+        .logo i { background: var(--gradient-text); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 28px; filter: drop-shadow(0 0 8px var(--primary-cyan));}
+        
+        .nav-links { list-style: none; display: flex; gap: 35px; align-items: center; }
         .nav-links li a { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: #e2e8f0; transition: 0.3s; }
         .nav-links li a:hover { color: var(--primary-cyan); text-shadow: 0 0 10px var(--accent-glow); }
         
         .btn-demo {
-            background: var(--gradient-text); color: #0a1128; padding: 12px 35px;
+            background: var(--gradient-text); color: #0a1128; padding: 10px 25px;
             border-radius: 50px; border: none; font-weight: 800; font-family: 'Inter', sans-serif;
             cursor: pointer; transition: 0.4s; box-shadow: 0 0 20px rgba(34, 211, 238, 0.5);
-            text-transform: uppercase; letter-spacing: 1px;
+            text-transform: uppercase; letter-spacing: 1px; font-size: 12px;
         }
         .btn-demo:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 0 30px var(--primary-cyan); color: #fff;}
+
+        /* Mobile Menu Button */
+        .mobile-toggle { display: none; font-size: 28px; color: var(--primary-cyan); cursor: pointer; z-index: 1001; }
 
         /* === Hero Section === */
         .hero {
@@ -81,48 +85,48 @@
         .hero-content { max-width: 850px; z-index: 2; margin-top: 80px; }
         
         .tech-badge {
-            display: inline-block; padding: 8px 25px; background: rgba(34, 211, 238, 0.15);
+            display: inline-block; padding: 8px 20px; background: rgba(34, 211, 238, 0.15);
             border: 1px solid var(--primary-cyan); border-radius: 50px; color: var(--primary-cyan);
-            font-size: 13px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 30px;
+            font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 30px;
             box-shadow: 0 0 15px rgba(34, 211, 238, 0.3); backdrop-filter: blur(5px);
         }
-        .hero-content h1 { font-size: 5.2rem; line-height: 1.1; margin-bottom: 25px; letter-spacing: -1px; text-shadow: 0 10px 20px rgba(0,0,0,0.5); }
+        .hero-content h1 { font-size: 5rem; line-height: 1.1; margin-bottom: 25px; letter-spacing: -1px; text-shadow: 0 10px 20px rgba(0,0,0,0.5); }
         .hero-content h1 span { background: var(--gradient-text); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 0 10px rgba(34, 211, 238, 0.3));}
-        .hero-content p { font-size: 1.25rem; color: #e2e8f0; margin-bottom: 45px; max-width: 650px; font-weight: 400; text-shadow: 0 2px 10px rgba(0,0,0,0.8); }
+        .hero-content p { font-size: 1.2rem; color: #e2e8f0; margin-bottom: 45px; max-width: 650px; font-weight: 400; line-height: 1.8; text-shadow: 0 2px 10px rgba(0,0,0,0.8); }
 
         .hero-stats {
-            display: flex; gap: 40px; margin-top: 50px; padding: 25px 40px;
+            display: flex; gap: 30px; margin-top: 20px; padding: 25px 35px;
             background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border);
             border-radius: 16px; backdrop-filter: blur(15px); display: inline-flex;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3); flex-wrap: wrap;
         }
-        .hero-stats div h4 { font-size: 2.2rem; color: #fff; margin-bottom: 5px; text-shadow: 0 0 10px rgba(255,255,255,0.3); }
-        .hero-stats div p { color: var(--primary-cyan); font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; }
+        .hero-stats div h4 { font-size: 1.8rem; color: #fff; margin-bottom: 5px; text-shadow: 0 0 10px rgba(255,255,255,0.3); }
+        .hero-stats div p { color: var(--primary-cyan); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
 
         /* === General Section Formatting === */
-        .section-pad { padding: 130px 8%; }
-        .section-header { text-align: center; margin-bottom: 80px; }
-        .section-title { font-size: 3.8rem; margin-bottom: 20px; font-weight: 900; letter-spacing: -1px; text-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+        .section-pad { padding: 100px 8%; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-title { font-size: 3.2rem; margin-bottom: 15px; font-weight: 900; letter-spacing: -1px; text-shadow: 0 5px 15px rgba(0,0,0,0.3); }
         .section-title span { color: var(--primary-cyan); text-shadow: 0 0 20px rgba(34, 211, 238, 0.4); }
-        .section-subtitle { color: var(--text-muted); font-size: 1.2rem; max-width: 700px; margin: 0 auto; font-weight: 400; }
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 40px; }
+        .section-subtitle { color: var(--text-muted); font-size: 1.1rem; max-width: 700px; margin: 0 auto; font-weight: 400; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
 
         /* === Glassmorphism Cards (Features) === */
         .glass-card {
             background: var(--bg-panel); backdrop-filter: blur(20px);
             border: 1px solid var(--glass-border); border-radius: 20px;
-            padding: 50px 40px; transition: 0.5s; position: relative; overflow: hidden;
+            padding: 40px 30px; transition: 0.5s; position: relative; overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
         .glass-card::before {
             content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px;
             background: var(--gradient-text); transform: scaleX(0); transform-origin: left; transition: 0.5s;
         }
-        .glass-card:hover { transform: translateY(-12px); background: var(--bg-panel-hover); border-color: rgba(34, 211, 238, 0.4); box-shadow: 0 25px 50px rgba(34, 211, 238, 0.15); }
+        .glass-card:hover { transform: translateY(-10px); background: var(--bg-panel-hover); border-color: rgba(34, 211, 238, 0.4); box-shadow: 0 25px 50px rgba(34, 211, 238, 0.15); }
         .glass-card:hover::before { transform: scaleX(1); }
-        .icon-box { font-size: 45px; color: var(--primary-cyan); margin-bottom: 30px; filter: drop-shadow(0 0 10px var(--primary-cyan)); }
-        .glass-card h3 { font-size: 1.6rem; margin-bottom: 15px; color: #fff; }
-        .glass-card p { color: var(--text-muted); font-size: 1.05rem; }
+        .icon-box { font-size: 40px; color: var(--primary-cyan); margin-bottom: 25px; filter: drop-shadow(0 0 10px var(--primary-cyan)); }
+        .glass-card h3 { font-size: 1.5rem; margin-bottom: 15px; color: #fff; }
+        .glass-card p { color: var(--text-muted); font-size: 1rem; }
 
         /* === Projects / Portfolio === */
         .project-card {
@@ -131,65 +135,65 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
         .project-card:hover { border-color: var(--primary-cyan); transform: translateY(-10px); box-shadow: 0 20px 40px rgba(34, 211, 238, 0.2); }
-        .p-img-box { height: 280px; overflow: hidden; position: relative; }
+        .p-img-box { height: 240px; overflow: hidden; position: relative; }
         .p-img-box img { width: 100%; height: 100%; object-fit: cover; transition: 1s cubic-bezier(0.25, 1, 0.5, 1); filter: brightness(0.9); }
-        .project-card:hover .p-img-box img { transform: scale(1.12); filter: brightness(1.1); }
-        .p-info { padding: 35px; position: relative; background: linear-gradient(to top, rgba(15, 23, 42, 1) 40%, transparent); margin-top: -50px; z-index: 2; }
-        .p-tag { color: var(--primary-cyan); font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2.5px; margin-bottom: 12px; display: inline-block; background: rgba(34,211,238,0.1); padding: 5px 12px; border-radius: 4px; }
-        .p-info h3 { font-size: 1.6rem; margin-bottom: 12px; }
-        .p-info p { color: var(--text-muted); font-size: 1rem; line-height: 1.6; }
-        .p-btn { margin-top: 20px; display: inline-block; color: #fff; font-size: 0.9rem; font-weight: 700; letter-spacing: 1.5px; transition: 0.3s; }
+        .project-card:hover .p-img-box img { transform: scale(1.1); filter: brightness(1.1); }
+        .p-info { padding: 30px; position: relative; background: linear-gradient(to top, rgba(15, 23, 42, 1) 50%, transparent); margin-top: -40px; z-index: 2; }
+        .p-tag { color: var(--primary-cyan); font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; display: inline-block; background: rgba(34,211,238,0.1); padding: 5px 12px; border-radius: 4px; }
+        .p-info h3 { font-size: 1.4rem; margin-bottom: 10px; }
+        .p-info p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; }
+        .p-btn { margin-top: 15px; display: inline-block; color: #fff; font-size: 0.85rem; font-weight: 700; letter-spacing: 1px; transition: 0.3s; }
         .project-card:hover .p-btn { color: var(--primary-cyan); }
-        .p-btn i { margin-left: 8px; transition: 0.3s; }
-        .project-card:hover .p-btn i { transform: translateX(8px); }
+        .p-btn i { margin-left: 5px; transition: 0.3s; }
+        .project-card:hover .p-btn i { transform: translateX(5px); }
 
         /* === Reviews / Testimonials Section === */
         .review-card {
-            background: var(--bg-panel); backdrop-filter: blur(15px); padding: 45px 35px;
+            background: var(--bg-panel); backdrop-filter: blur(15px); padding: 40px 30px;
             border-radius: 20px; border: 1px solid var(--glass-border); transition: 0.4s;
             position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
         .review-card:hover { border-color: var(--primary-cyan); transform: translateY(-8px); box-shadow: 0 20px 40px rgba(34, 211, 238, 0.15); background: var(--bg-panel-hover); }
-        .quote-icon { position: absolute; top: 30px; right: 30px; font-size: 45px; color: rgba(255,255,255,0.03); transition: 0.4s; }
+        .quote-icon { position: absolute; top: 25px; right: 25px; font-size: 40px; color: rgba(255,255,255,0.04); transition: 0.4s; }
         .review-card:hover .quote-icon { color: rgba(34, 211, 238, 0.1); transform: scale(1.1); }
-        .stars { color: #facc15; font-size: 15px; margin-bottom: 20px; text-shadow: 0 0 10px rgba(250, 204, 21, 0.4); }
-        .review-txt { font-size: 1.05rem; font-style: italic; color: var(--text-main); margin-bottom: 30px; line-height: 1.8; }
+        .stars { color: #facc15; font-size: 14px; margin-bottom: 15px; text-shadow: 0 0 10px rgba(250, 204, 21, 0.4); }
+        .review-txt { font-size: 1rem; font-style: italic; color: var(--text-main); margin-bottom: 25px; line-height: 1.7; }
         
         .client-meta { display: flex; align-items: center; gap: 15px; }
         .client-img-wrapper {
-            width: 60px; height: 60px; border-radius: 50%; overflow: hidden;
-            border: 2px solid var(--primary-cyan); padding: 2px;
+            width: 55px; height: 55px; border-radius: 50%; overflow: hidden;
+            border: 2px solid var(--primary-cyan); padding: 2px; flex-shrink: 0;
         }
         .client-img-wrapper img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
-        .client-meta h4 { font-size: 1.15rem; margin-bottom: 2px; color: #fff; }
-        .client-meta p { font-size: 0.8rem; color: var(--primary-cyan); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+        .client-meta h4 { font-size: 1.1rem; margin-bottom: 2px; color: #fff; }
+        .client-meta p { font-size: 0.75rem; color: var(--primary-cyan); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* === Leadership Team (6 Members) === */
+        /* === Leadership Team === */
         .team-card {
-            background: var(--bg-panel); padding: 50px 30px; text-align: center;
+            background: var(--bg-panel); padding: 40px 25px; text-align: center;
             border-radius: 20px; border: 1px solid var(--glass-border); transition: 0.5s;
             backdrop-filter: blur(15px);
         }
         .team-card:hover { transform: translateY(-10px); border-color: var(--primary-cyan); box-shadow: 0 15px 40px rgba(34, 211, 238, 0.15); background: var(--bg-panel-hover); }
         
         .supervisor { 
-            grid-column: 1 / -1; max-width: 850px; margin: 0 auto 40px; 
+            grid-column: 1 / -1; max-width: 800px; margin: 0 auto 30px; 
             background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.4)); 
             border: 1px solid var(--primary-cyan); box-shadow: 0 0 40px rgba(34, 211, 238, 0.2); 
         }
         
         .team-avatar {
-            width: 150px; height: 150px; margin: 0 auto 30px; border-radius: 50%;
+            width: 130px; height: 130px; margin: 0 auto 25px; border-radius: 50%;
             object-fit: cover; object-position: center top; border: 4px solid transparent;
             background: linear-gradient(#0a1128, #0a1128) padding-box, var(--gradient-text) border-box;
             padding: 5px; transition: 0.5s;
         }
-        .team-card:hover .team-avatar { transform: scale(1.08); box-shadow: 0 0 25px rgba(34, 211, 238, 0.5); }
-        .supervisor .team-avatar { width: 190px; height: 190px; }
+        .team-card:hover .team-avatar { transform: scale(1.05); box-shadow: 0 0 20px rgba(34, 211, 238, 0.5); }
+        .supervisor .team-avatar { width: 160px; height: 160px; }
         
-        .team-card h3 { font-size: 1.6rem; margin-bottom: 5px; color: #fff; }
-        .team-role { color: var(--primary-cyan); font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; display: block; }
-        .team-desc { font-size: 1.05rem; color: var(--text-muted); }
+        .team-card h3 { font-size: 1.4rem; margin-bottom: 5px; color: #fff; }
+        .team-role { color: var(--primary-cyan); font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 15px; display: block; }
+        .team-desc { font-size: 0.95rem; color: var(--text-muted); }
 
         /* === Interactive Modal (Case Study) === */
         .modal-wrap {
@@ -200,55 +204,109 @@
         .modal-wrap.active { display: block; opacity: 1; }
         
         .modal-close {
-            position: fixed; top: 30px; right: 5%; width: 60px; height: 60px; border-radius: 50%;
-            background: rgba(255,255,255,0.05); color: #fff; font-size: 28px; border: 1px solid var(--glass-border);
+            position: fixed; top: 20px; right: 5%; width: 50px; height: 50px; border-radius: 50%;
+            background: rgba(255,255,255,0.05); color: #fff; font-size: 24px; border: 1px solid var(--glass-border);
             display: flex; justify-content: center; align-items: center; cursor: pointer; z-index: 2001; transition: 0.4s;
         }
-        .modal-close:hover { background: var(--fire-gradient); transform: rotate(90deg) scale(1.1); border-color: transparent; box-shadow: 0 0 30px #ff4500; }
+        .modal-close:hover { background: var(--fire-gradient); transform: rotate(90deg) scale(1.1); border-color: transparent; box-shadow: 0 0 20px #ff4500; }
         
         .modal-box {
-            max-width: 1200px; margin: 0 auto; background: #0a1128; border-radius: 20px;
+            max-width: 1100px; margin: 0 auto; background: #0a1128; border-radius: 20px;
             overflow: hidden; border: 1px solid rgba(34, 211, 238, 0.4);
-            animation: slideUp 0.6s cubic-bezier(0.25, 1, 0.5, 1); box-shadow: 0 30px 80px rgba(0,0,0,0.9);
+            animation: slideUp 0.5s cubic-bezier(0.25, 1, 0.5, 1); box-shadow: 0 30px 80px rgba(0,0,0,0.9);
         }
-        @keyframes slideUp { from { transform: translateY(60px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        @keyframes slideUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
         
-        .m-hero { width: 100%; height: 550px; object-fit: cover; filter: brightness(1.1); }
-        .m-body { padding: 60px; }
-        .m-body h2 { font-size: 3.5rem; margin-bottom: 15px; letter-spacing: -1px; }
+        .m-hero { width: 100%; height: 400px; object-fit: cover; filter: brightness(1.1); }
+        .m-body { padding: 40px; }
+        .m-body h2 { font-size: 2.8rem; margin-bottom: 10px; letter-spacing: -1px; }
         
-        .case-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin: 50px 0; }
-        .case-box { background: rgba(255,255,255,0.02); border: 1px solid var(--glass-border); padding: 40px; border-radius: 16px; transition: 0.3s; }
-        .case-box:hover { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.2); }
-        .case-box h4 { font-size: 1.4rem; margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
-        .case-box p { color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; }
+        .case-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin: 40px 0; }
+        .case-box { background: rgba(255,255,255,0.02); border: 1px solid var(--glass-border); padding: 30px; border-radius: 16px; transition: 0.3s; }
+        .case-box h4 { font-size: 1.2rem; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; color: #fff;}
+        .case-box p { color: var(--text-muted); font-size: 1rem; line-height: 1.7; }
         
         .fire-box { background: linear-gradient(135deg, rgba(255, 69, 0, 0.08), rgba(255, 170, 0, 0.08)); border: 1px solid rgba(255, 69, 0, 0.4); position: relative; overflow: hidden;}
-        .fire-box::before { content: ''; position: absolute; top: 0; left: 0; width: 5px; height: 100%; background: var(--fire-gradient); }
-        .fire-box h4 { color: #ffaa00; text-shadow: 0 0 15px rgba(255, 69, 0, 0.5); }
-        .fire-box p { color: #fff; font-weight: 500; }
+        .fire-box::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--fire-gradient); }
+        .fire-box h4 { color: #ffaa00; text-shadow: 0 0 10px rgba(255, 69, 0, 0.3); }
+        .fire-box p { color: #fff; }
 
-        .m-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; margin-top: 30px; }
-        .m-gallery img { width: 100%; height: 300px; object-fit: cover; border-radius: 12px; transition: 0.4s; border: 1px solid var(--glass-border); }
-        .m-gallery img:hover { transform: scale(1.03); border-color: var(--primary-cyan); box-shadow: 0 10px 30px rgba(34,211,238,0.2); }
+        .m-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px; }
+        .m-gallery img { width: 100%; height: 220px; object-fit: cover; border-radius: 10px; border: 1px solid var(--glass-border); }
 
         /* === Footer === */
-        footer { background: #010308; padding: 100px 8% 40px; border-top: 1px solid rgba(255,255,255,0.05); }
-        .f-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 50px; margin-bottom: 60px; }
-        .f-logo { font-size: 24px; font-weight: 900; color: #fff; margin-bottom: 25px; display: flex; align-items: center; gap: 12px; }
-        .f-logo i { color: var(--primary-cyan); font-size: 28px; }
-        .f-txt { color: var(--text-muted); font-size: 1rem; max-width: 400px; }
-        .f-links h4 { color: #fff; margin-bottom: 25px; font-size: 1.2rem; }
+        footer { background: #010308; padding: 80px 8% 30px; border-top: 1px solid rgba(255,255,255,0.05); }
+        .f-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 50px; }
+        .f-logo { font-size: 20px; font-weight: 900; color: #fff; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .f-logo i { color: var(--primary-cyan); font-size: 24px; }
+        .f-txt { color: var(--text-muted); font-size: 0.9rem; max-width: 350px; }
+        .f-links h4 { color: #fff; margin-bottom: 20px; font-size: 1.1rem; }
         .f-links ul { list-style: none; }
-        .f-links li { margin-bottom: 15px; }
-        .f-links a { color: var(--text-muted); transition: 0.3s; font-size: 1rem; }
+        .f-links li { margin-bottom: 12px; }
+        .f-links a { color: var(--text-muted); transition: 0.3s; font-size: 0.95rem; }
         .f-links a:hover { color: var(--primary-cyan); padding-left: 5px; }
-        .f-bottom { text-align: center; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.05); color: var(--text-muted); font-size: 0.9rem; }
+        .f-bottom { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.05); color: var(--text-muted); font-size: 0.85rem; }
 
         /* Utilities */
-        .fade-in { opacity: 0; transform: translateY(40px); transition: 0.8s cubic-bezier(0.25, 1, 0.5, 1); }
+        .fade-in { opacity: 0; transform: translateY(30px); transition: 0.8s cubic-bezier(0.25, 1, 0.5, 1); }
         .fade-in.appear { opacity: 1; transform: translateY(0); }
         body.modal-open { overflow: hidden; }
+
+        /* =========================================
+           MOBILE RESPONSIVENESS (Media Queries) 
+           ========================================= */
+        @media (max-width: 992px) {
+            .hero-content h1 { font-size: 3.8rem; }
+            .section-title { font-size: 2.8rem; }
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 15px 5%; }
+            .logo { font-size: 20px; }
+            .logo i { font-size: 24px; }
+            
+            /* Mobile Navbar Toggle */
+            .nav-links {
+                position: absolute; top: 100%; left: 0; width: 100%;
+                background: rgba(10, 17, 40, 0.98); backdrop-filter: blur(20px);
+                flex-direction: column; gap: 20px; padding: 30px 5%;
+                border-bottom: 1px solid var(--glass-border);
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+                transition: 0.4s ease-in-out;
+            }
+            .nav-links.nav-active { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+            .nav-links li { width: 100%; text-align: center; }
+            .btn-demo { width: 100%; margin-top: 10px; }
+            .mobile-toggle { display: block; }
+
+            /* Hero Adjustments */
+            .hero { padding: 100px 5% 50px; background-position: left center; }
+            .hero-content { margin-top: 40px; }
+            .hero-content h1 { font-size: 3rem; margin-bottom: 15px; }
+            .hero-content p { font-size: 1.05rem; }
+            .hero-stats { flex-direction: column; width: 100%; gap: 20px; padding: 20px; }
+            .hero-stats div h4 { font-size: 1.8rem; }
+
+            /* Sections & Grids */
+            .section-pad { padding: 80px 5%; }
+            .section-header { margin-bottom: 40px; }
+            .section-title { font-size: 2.2rem; }
+            .grid-3 { grid-template-columns: 1fr; gap: 25px; }
+            
+            /* Modal Adjustments */
+            .modal-wrap { padding: 20px 5%; }
+            .modal-close { top: 15px; right: 5%; width: 45px; height: 45px; font-size: 20px; background: rgba(0,0,0,0.7); }
+            .m-hero { height: 250px; }
+            .m-body { padding: 30px 20px; }
+            .m-body h2 { font-size: 2rem; }
+            .case-grid { grid-template-columns: 1fr; margin: 30px 0; gap: 20px; }
+            .case-box { padding: 25px; }
+
+            /* Footer */
+            .f-grid { grid-template-columns: 1fr; gap: 30px; text-align: center; }
+            .f-logo { justify-content: center; }
+            .f-txt { margin: 0 auto; }
+        }
     </style>
 </head>
 <body>
@@ -257,16 +315,21 @@
     <!-- Navbar -->
     <nav id="navbar">
         <div class="logo"><i class="fa-solid fa-shield-halved"></i> HOME GUARD</div>
-        <ul class="nav-links">
-            <li><a href="#features">Architecture</a></li>
-            <li><a href="#portfolio">Deployments</a></li>
-            <li><a href="#reviews">Testimonials</a></li>
-            <li><a href="#team">Leadership</a></li>
+        
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#features" onclick="toggleMenu()">Architecture</a></li>
+            <li><a href="#portfolio" onclick="toggleMenu()">Deployments</a></li>
+            <li><a href="#reviews" onclick="toggleMenu()">Testimonials</a></li>
+            <li><a href="#team" onclick="toggleMenu()">Leadership</a></li>
+            <li><button class="btn-demo">Request Demo</button></li>
         </ul>
-        <button class="btn-demo">Request Enterprise Demo</button>
+
+        <div class="mobile-toggle" onclick="toggleMenu()">
+            <i class="fa-solid fa-bars"></i>
+        </div>
     </nav>
 
-    <!-- Hero Section (UPDATED: Accurate to Project Report) -->
+    <!-- Hero Section (Aligned with Project Report) -->
     <header class="hero" id="home">
         <div class="hero-content fade-in">
             <span class="tech-badge"><i class="fa-solid fa-shield-heart"></i> Autonomous Safety Infrastructure</span>
@@ -296,7 +359,7 @@
     <section class="section-pad" id="features">
         <div class="section-header fade-in">
             <h2 class="section-title">Architected for <span>Survival</span></h2>
-            <p class="section-subtitle">Discover the proprietary engineering that sets Home Guard apart from consumer-grade IoT toys.</p>
+            <p class="section-subtitle">Discover the proprietary engineering that sets Home Guard apart from consumer-grade IoT systems.</p>
         </div>
         
         <div class="grid-3">
@@ -318,7 +381,7 @@
         </div>
     </section>
 
-    <!-- Portfolio / 6 Masterpieces -->
+    <!-- Portfolio / 6 Masterpieces (Images Updated to Reliable Ones) -->
     <section class="section-pad" id="portfolio">
         <div class="section-header fade-in">
             <h2 class="section-title">Masterpiece <span>Deployments</span></h2>
@@ -327,68 +390,68 @@
         
         <div class="grid-3">
             <div class="project-card fade-in" onclick="openModal(1)">
-                <div class="p-img-box"><img src="https://images.unsplash.com/photo-1613490900233-141c5560d75d?q=80&w=1000&auto=format&fit=crop" alt="Azure Villa"></div>
+                <div class="p-img-box"><img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80" alt="Azure Villa"></div>
                 <div class="p-info">
                     <span class="p-tag">Ultra-Luxury Estate</span>
                     <h3>The Azure Mansion Grid</h3>
-                    <p>A $15M estate fortified with custom edge-nodes. The perimeter reacts to breaches in 0.2 milliseconds, independent of the cloud.</p>
+                    <p>A $15M estate fortified with custom edge-nodes. The perimeter reacts to breaches in 0.2 milliseconds.</p>
                     <span class="p-btn">READ CASE STUDY <i class="fa-solid fa-arrow-right"></i></span>
                 </div>
             </div>
             
             <div class="project-card fade-in" onclick="openModal(2)">
-                <div class="p-img-box"><img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1000&auto=format&fit=crop" alt="Accessible Facility"></div>
+                <div class="p-img-box"><img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80" alt="Accessible Facility"></div>
                 <div class="p-info">
                     <span class="p-tag">Advanced Healthcare</span>
                     <h3>Autonomous Care Facility</h3>
-                    <p>An invisible AI-driven thermal grid that predicts patient falls before they happen, initiating paramedic dispatch automatically.</p>
+                    <p>An invisible AI-driven thermal grid that predicts patient falls before they happen, initiating paramedic dispatch.</p>
                     <span class="p-btn">READ CASE STUDY <i class="fa-solid fa-arrow-right"></i></span>
                 </div>
             </div>
 
             <div class="project-card fade-in" onclick="openModal(3)">
-                <div class="p-img-box"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1000&auto=format&fit=crop" alt="Nexus Hub"></div>
+                <div class="p-img-box"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" alt="Nexus Hub"></div>
                 <div class="p-info">
                     <span class="p-tag">Corporate Citadel</span>
                     <h3>Nexus 50-Story Hub</h3>
-                    <p>Handling 10,000+ daily data points. Our VLAN-segregated architecture thwarted simulated state-sponsored cyber attacks.</p>
+                    <p>Handling 10,000+ daily data points. Our VLAN-segregated architecture thwarted simulated cyber attacks.</p>
                     <span class="p-btn">READ CASE STUDY <i class="fa-solid fa-arrow-right"></i></span>
                 </div>
             </div>
 
             <div class="project-card fade-in" onclick="openModal(4)">
-                <div class="p-img-box"><img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1000&auto=format&fit=crop" alt="Pearl Resort"></div>
+                <div class="p-img-box"><img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80" alt="Pearl Resort"></div>
                 <div class="p-info">
                     <span class="p-tag">5-Star Hospitality</span>
                     <h3>The Pearl Island Resort</h3>
-                    <p>120 suites equipped with our proprietary IP67 bio-sensors. The system isolates HVAC and alerts civil defense instantly.</p>
+                    <p>120 suites equipped with our proprietary IP67 bio-sensors. The system isolates HVAC and alerts civil defense.</p>
                     <span class="p-btn">READ CASE STUDY <i class="fa-solid fa-arrow-right"></i></span>
                 </div>
             </div>
 
             <div class="project-card fade-in" onclick="openModal(5)">
-                <div class="p-img-box"><img src="https://images.unsplash.com/photo-1449844908441-8829872d2607?q=80&w=1000&auto=format&fit=crop" alt="Smart Compound"></div>
+                <div class="p-img-box"><img src="https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&w=800&q=80" alt="Smart Compound"></div>
                 <div class="p-info">
                     <span class="p-tag">Decentralized City</span>
                     <h3>Cairo Mega-Compound</h3>
-                    <p>A massive 500-node decentralized mesh network transforming a standard community into an interconnected smart-fortress.</p>
+                    <p>A massive 500-node decentralized mesh network transforming a standard community into a smart-fortress.</p>
                     <span class="p-btn">READ CASE STUDY <i class="fa-solid fa-arrow-right"></i></span>
                 </div>
             </div>
 
             <div class="project-card fade-in" onclick="openModal(6)">
-                <div class="p-img-box"><img src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?q=80&w=1000&auto=format&fit=crop" alt="ElderCare Facility"></div>
+                <div class="p-img-box"><img src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=800&q=80" alt="ElderCare Facility"></div>
                 <div class="p-info">
                     <span class="p-tag">Assisted Living</span>
                     <h3>SecureLife Care Center</h3>
-                    <p>RTOS controllers integrated directly into life-support and lock mechanisms, reducing emergency response times by 74%.</p>
+                    <p>RTOS controllers integrated directly into life-support and lock mechanisms, reducing response times by 74%.</p>
                     <span class="p-btn">READ CASE STUDY <i class="fa-solid fa-arrow-right"></i></span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 6 Testimonials / Reviews (RESTORED) -->
+    <!-- 6 Testimonials / Reviews -->
     <section class="section-pad" id="reviews" style="background: rgba(10, 17, 40, 0.5); border-top: 1px solid var(--glass-border);">
         <div class="section-header fade-in">
             <h2 class="section-title">Verified <span>Trust</span></h2>
@@ -401,7 +464,7 @@
                 <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
                 <p class="review-txt">"The H2X emergency system gives me absolute peace of mind. Knowing the system contacts the fire department instantly before we even smell smoke is incredible engineering."</p>
                 <div class="client-meta">
-                    <div class="client-img-wrapper"><img src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?q=80&w=200&auto=format&fit=crop" alt="Yousef"></div>
+                    <div class="client-img-wrapper"><img src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?auto=format&fit=crop&w=200&q=80" alt="Yousef"></div>
                     <div><h4>Yousef El-Sweisy</h4><p>Estate Owner</p></div>
                 </div>
             </div>
@@ -411,7 +474,7 @@
                 <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
                 <p class="review-txt">"As someone living alone, Home Guard's custom voice automation and fall detection have completely changed my life and independence. It's the ultimate safety net."</p>
                 <div class="client-meta">
-                    <div class="client-img-wrapper"><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=200&auto=format&fit=crop" alt="Sarah"></div>
+                    <div class="client-img-wrapper"><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=200&q=80" alt="Sarah"></div>
                     <div><h4>Sarah El-Din</h4><p>Resident</p></div>
                 </div>
             </div>
@@ -421,7 +484,7 @@
                 <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
                 <p class="review-txt">"The technical architecture is flawless. Separating the security network from the main internet via VLANs proves these guys understand true enterprise cyber security."</p>
                 <div class="client-meta">
-                    <div class="client-img-wrapper"><img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=200&auto=format&fit=crop" alt="Tarek"></div>
+                    <div class="client-img-wrapper"><img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=200&q=80" alt="Tarek"></div>
                     <div><h4>Tarek Hassan</h4><p>Facility Manager</p></div>
                 </div>
             </div>
@@ -431,7 +494,7 @@
                 <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
                 <p class="review-txt">"Integrating their API directly into our compound's civil defense protocol saved us millions in traditional infrastructure. It's the absolute future of gated communities."</p>
                 <div class="client-meta">
-                    <div class="client-img-wrapper"><img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=200&auto=format&fit=crop" alt="Momen"></div>
+                    <div class="client-img-wrapper"><img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=200&q=80" alt="Momen"></div>
                     <div><h4>Momen Mostafa</h4><p>Real Estate Developer</p></div>
                 </div>
             </div>
@@ -441,7 +504,7 @@
                 <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
                 <p class="review-txt">"We had a total power outage during a storm, and the offline fallback mode kept all security sensors and emergency comms running flawlessly. Outstanding resilience."</p>
                 <div class="client-meta">
-                    <div class="client-img-wrapper"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop" alt="Mahmoud"></div>
+                    <div class="client-img-wrapper"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80" alt="Mahmoud"></div>
                     <div><h4>Mahmoud Abdelrasoul</h4><p>Homeowner</p></div>
                 </div>
             </div>
@@ -451,14 +514,14 @@
                 <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
                 <p class="review-txt">"Our hotel suites are now 100% automated with Home Guard. The zero-latency response to smoke detection is exactly what premium hospitality safety regulations demand."</p>
                 <div class="client-meta">
-                    <div class="client-img-wrapper"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop" alt="Bahiri"></div>
+                    <div class="client-img-wrapper"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" alt="Bahiri"></div>
                     <div><h4>Mohamed Bahiri</h4><p>Operations Director</p></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Leadership Team (6 Members RESTORED) -->
+    <!-- Leadership Team (6 Members) -->
     <section class="section-pad" id="team">
         <div class="section-header fade-in">
             <h2 class="section-title">The Brains Behind <span>The Shield</span></h2>
@@ -466,52 +529,46 @@
         </div>
         
         <div class="grid-3">
-            <!-- 1. General Supervisor -->
             <div class="team-card supervisor fade-in">
-                <!-- Change "ahmad.jpg" to your actual picture file name -->
-                <img src="Ahmad.png" class="team-avatar" alt="Ahmad Gamal">
+                <!-- IMPORTANT: Change "ahmad.jpg" to your real photo file name before hosting -->
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=500&q=80" class="team-avatar" alt="Ahmad Gamal">
                 <h3>Eng. Ahmad Gamal</h3>
                 <span class="team-role">General Supervisor & Project Director</span>
                 <p class="team-desc">Architecting the global vision. Directing strategic mega-deployments, leading international marketing strategies, and ensuring total stakeholder alignment.</p>
             </div>
 
-            <!-- 2. Software Lead -->
             <div class="team-card fade-in">
-                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=500&auto=format&fit=crop" class="team-avatar" alt="Eslam Ashraf">
+                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=500&q=80" class="team-avatar" alt="Eslam Ashraf">
                 <h3>Eng. Eslam Ashraf</h3>
-                <span class="team-role">Project Manager (Software)</span>
+                <span class="team-role">Head of Software Engineering</span>
                 <p class="team-desc">The mastermind behind our Zero-Latency cloud architecture, H2X API protocols, and military-grade backend encryption.</p>
             </div>
             
-            <!-- 3. Hardware Lead -->
             <div class="team-card fade-in">
-                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=500&auto=format&fit=crop" class="team-avatar" alt="Hatem Saied">
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=500&q=80" class="team-avatar" alt="Hatem Saied">
                 <h3>Eng. Hatem Saied</h3>
-                <span class="team-role">Project Manager (Hardware)</span>
+                <span class="team-role">Head of Hardware Infrastructure</span>
                 <p class="team-desc">Commands the physical realm. Designs complex RTOS edge nodes, ruggedized IoT arrays, and autonomous robotics integrations.</p>
             </div>
             
-            <!-- 4. QA Lead -->
             <div class="team-card fade-in">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=500&auto=format&fit=crop" class="team-avatar" alt="Mostafa Essam">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80" class="team-avatar" alt="Mostafa Essam">
                 <h3>Eng. Mostafa Essam</h3>
-                <span class="team-role">Project Manager (Approvals)</span>
+                <span class="team-role">Director of QA & Compliance</span>
                 <p class="team-desc">The ultimate gatekeeper. Enforces rigorous ISO stress-tests and secures global civil defense certifications before any code goes live.</p>
             </div>
 
-            <!-- 5. Operations Lead -->
             <div class="team-card fade-in">
-                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=500&auto=format&fit=crop" class="team-avatar" alt="Ahmed Mohamed">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=500&q=80" class="team-avatar" alt="Ahmed Mohamed">
                 <h3>Eng. Ahmed Mohamed</h3>
-                <span class="team-role">Project Manager (QA & Operations)</span>
+                <span class="team-role">Director of Operations</span>
                 <p class="team-desc">Drives critical path execution on the ground. Masters cross-departmental risk mitigation strategies for massive physical deployments.</p>
             </div>
 
-            <!-- 6. Logistics Lead -->
             <div class="team-card fade-in">
-                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=500&auto=format&fit=crop" class="team-avatar" alt="Alaa Ashraf">
+                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=500&q=80" class="team-avatar" alt="Alaa Ashraf">
                 <h3>Eng. Alaa Ashraf</h3>
-                <span class="team-role">Project Manager (Logistics)</span>
+                <span class="team-role">Director of Global Logistics</span>
                 <p class="team-desc">Controls multi-million dollar resource allocations, budget pipelines, and ensures hardware supply chains remain uninterrupted.</p>
             </div>
         </div>
@@ -523,7 +580,7 @@
         <div class="modal-box">
             <img src="" id="mImg" class="m-hero" alt="Project Hero">
             <div class="m-body">
-                <span class="p-tag" id="mTag" style="font-size: 1.1rem;"></span>
+                <span class="p-tag" id="mTag" style="font-size: 1rem;"></span>
                 <h2 id="mTitle"></h2>
                 
                 <div class="case-grid">
@@ -541,7 +598,7 @@
                     </div>
                 </div>
 
-                <h3 style="padding-bottom: 15px; border-bottom: 1px solid var(--glass-border); font-size: 2rem; margin-top: 30px;">Architecture Gallery</h3>
+                <h3 style="padding-bottom: 10px; border-bottom: 1px solid var(--glass-border); font-size: 1.5rem; margin-top: 20px;">Architecture Gallery</h3>
                 <div class="m-gallery" id="mGallery"></div>
             </div>
         </div>
@@ -570,17 +627,25 @@
 
     <!-- JavaScript -->
     <script>
+        // Navbar Scrolled Effect
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('navbar');
             if (window.scrollY > 50) {
                 nav.style.background = 'rgba(10, 17, 40, 0.95)';
                 nav.style.borderBottom = '1px solid rgba(34, 211, 238, 0.3)';
             } else {
-                nav.style.background = 'rgba(10, 17, 40, 0.75)';
+                nav.style.background = 'rgba(10, 17, 40, 0.85)';
                 nav.style.borderBottom = '1px solid rgba(255,255,255,0.1)';
             }
         });
 
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('nav-active');
+        }
+
+        // Scroll Animations
         const faders = document.querySelectorAll('.fade-in');
         const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
         const appearOnScroll = new IntersectionObserver((entries, observer) => {
@@ -592,59 +657,60 @@
         }, appearOptions);
         faders.forEach(fader => { appearOnScroll.observe(fader); });
 
-        // === ELITE PROJECT DATA COPYWRITING ===
+        // === ELITE PROJECT DATA COPYWRITING & TESTED IMAGE URLs ===
         const projects = {
             1: { 
                 title: "The Azure Mansion Grid", tag: "Ultra-Luxury Estate", 
-                img: "https://images.unsplash.com/photo-1613490900233-141c5560d75d?q=80&w=1500&auto=format&fit=crop", 
+                img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1500&q=80", 
                 challenge: "Securing a $15M sprawling estate spanning 5 acres against advanced physical and cyber intrusions, coupled with a highly unstable local power grid.",
                 tech: "Custom STM32 edge-nodes, embedded LoRaWAN meshing for zero-dead-zone communication, and complete VLAN architecture isolation.",
                 edge: "Absolute Offline Supremacy. If the national grid is severed and internet lines are cut, our proprietary micro-grid fallback ensures the estate's hazard detection and defense perimeter remain fully lethal and operational without a millisecond of downtime.",
-                gallery: ["https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop", "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800&auto=format&fit=crop", "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop"] 
+                gallery: ["https://images.unsplash.com/photo-1600607686527-6fb886090705?auto=format&fit=crop&w=800&q=80", "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80", "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80"] 
             },
             2: { 
                 title: "Autonomous Care Facility", tag: "Advanced Healthcare", 
-                img: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1500&auto=format&fit=crop", 
+                img: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1500&q=80", 
                 challenge: "Fragile elderly residents required constant monitoring, but wearable panic buttons were frequently forgotten, leading to life-threatening delays.",
                 tech: "AI-driven optical thermal arrays, H2X localized dispatch engine, and biometric pattern recognition algorithms.",
                 edge: "Pre-emptive Rescue. We engineered an invisible grid that doesn't just detect falls, it predicts them. Upon anomaly detection, it bypasses human verification, locking off non-essential zones and guiding paramedics directly to the patient's room in under 3 seconds.",
-                gallery: ["https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?q=80&w=800&auto=format&fit=crop", "https://images.unsplash.com/photo-1556912167-f556f1f39fdf?q=80&w=800&auto=format&fit=crop", "https://images.unsplash.com/photo-1615873968403-89e068629265?q=80&w=800&auto=format&fit=crop"] 
+                gallery: ["https://images.unsplash.com/photo-1584433144859-1fc3ab64ae32?auto=format&fit=crop&w=800&q=80", "https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=800&q=80", "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80"] 
             },
             3: { 
                 title: "Nexus 50-Story Hub", tag: "Corporate Citadel", 
-                img: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1500&auto=format&fit=crop", 
+                img: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1500&q=80", 
                 challenge: "Processing over 10,000 real-time security events daily across a massive commercial skyscraper without creating a single point of failure.",
                 tech: "Enterprise-grade firewalls, biometric access nodes, and RTOS-optimized energy load balancing.",
                 edge: "Impenetrable Citadel. We subjected the building's infrastructure to a simulated state-sponsored cyber attack. Our VLAN-segregated architecture thwarted the penetration entirely, proving our military-grade resilience and securing a 40% insurance premium reduction for the client.",
-                gallery: ["https://images.unsplash.com/photo-1497215842964-222b330d4104?q=80&w=800&auto=format&fit=crop", "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=800&auto=format&fit=crop", "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=800&auto=format&fit=crop"] 
+                gallery: ["https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80", "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80", "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=800&q=80"] 
             },
             4: { 
                 title: "The Pearl Island Resort", tag: "5-Star Hospitality", 
-                img: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1500&auto=format&fit=crop", 
+                img: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1500&q=80", 
                 challenge: "Extreme ocean humidity causing legacy fire sensors to fail, combined with absolute zero-tolerance for false alarms in VIP suites.",
                 tech: "IP67-rated industrial bio-sensors, anonymized thermal imaging, and a localized RTOS command hub.",
                 edge: "Invisible Safety Protocol. There are zero cameras inside the suites to ensure VIP privacy. Yet, if a fire sparks, our system isolates the HVAC, illuminates smart floor escape vectors, and alerts civil defense before the first wisp of smoke is even visible to the human eye.",
-                gallery: ["https://images.unsplash.com/photo-1618773928120-2c7bb1ad53d4?q=80&w=800&auto=format&fit=crop", "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?q=80&w=800&auto=format&fit=crop", "https://images.unsplash.com/photo-1564501049412-61c2a3083791?q=80&w=800&auto=format&fit=crop"] 
+                gallery: ["https://images.unsplash.com/photo-1566073771259-6a85e60cb386?auto=format&fit=crop&w=800&q=80", "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=800&q=80", "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=800&q=80"] 
             },
             5: { 
                 title: "Cairo Mega-Compound", tag: "Decentralized City", 
-                img: "https://images.unsplash.com/photo-1449844908441-8829872d2607?q=80&w=1500&auto=format&fit=crop", 
+                img: "https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&w=1500&q=80", 
                 challenge: "Networking 500+ independent luxury homes into a central emergency dispatch without ever crossing or exposing private homeowner data.",
                 tech: "Decentralized mesh networking, end-to-end AES-256 encryption, and automated compound gate routing.",
                 edge: "The Unbreakable Mesh. We eliminated the central server vulnerability. If a localized node is destroyed or hacked, the rest of the 500-home mesh instantly recalibrates, ensuring the compound's overarching defense grid remains impenetrable.",
-                gallery: ["https://images.unsplash.com/photo-1605276374104-a64115b713e4?q=80&w=800&auto=format&fit=crop", "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800&auto=format&fit=crop", "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop"] 
+                gallery: ["https://images.unsplash.com/photo-1479839672679-a4648508eb3c?auto=format&fit=crop&w=800&q=80", "https://images.unsplash.com/photo-1605276374104-a64115b713e4?auto=format&fit=crop&w=800&q=80", "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80"] 
             },
             6: { 
                 title: "SecureLife Care Center", tag: "Assisted Living", 
-                img: "https://images.unsplash.com/photo-1538108149393-fbbd81895907?q=80&w=1500&auto=format&fit=crop", 
+                img: "https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=1500&q=80", 
                 challenge: "Paramedics frequently faced delays waiting for manual keys to access locked patient rooms during sudden cardiac arrests.",
                 tech: "Heart-rate anomaly triggers, smart-lock API integrations, and wearable-to-infrastructure hyper-sync.",
                 edge: "The Ghost Key Protocol. When a patient's vitals drop critically, our system doesn't just call an ambulance. It automatically disengages the electronic lock on that specific room while securing the rest of the wing, slashing response times by a verified 74%.",
-                gallery: ["https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop", "https://images.unsplash.com/photo-1551281030-c752c0f99485?q=80&w=800&auto=format&fit=crop", "https://images.unsplash.com/photo-1527613426441-4da17471b66d?q=80&w=800&auto=format&fit=crop"] 
+                gallery: ["https://images.unsplash.com/photo-1527613426441-4da17471b66d?auto=format&fit=crop&w=800&q=80", "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80", "https://images.unsplash.com/photo-1551281030-c752c0f99485?auto=format&fit=crop&w=800&q=80"] 
             }
         };
 
         const modal = document.getElementById('projectModal');
+        
         function openModal(id) {
             const data = projects[id];
             document.getElementById('mImg').src = data.img;
@@ -665,6 +731,7 @@
             modal.classList.add('active');
             document.body.classList.add('modal-open');
         }
+        
         function closeModal() {
             modal.classList.remove('active');
             document.body.classList.remove('modal-open');
