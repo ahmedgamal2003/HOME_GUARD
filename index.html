@@ -11,14 +11,14 @@
     <style>
         /* === Elite Bright-Cyber Theme === */
         :root {
-            --bg-dark: #0a1128; /* Lighter, rich navy blue instead of pure black */
-            --bg-panel: rgba(30, 58, 138, 0.25); /* Bright transparent blue */
+            --bg-dark: #0a1128;
+            --bg-panel: rgba(30, 58, 138, 0.25);
             --bg-panel-hover: rgba(37, 99, 235, 0.15);
             --primary-blue: #3b82f6;
-            --primary-cyan: #22d3ee; /* Brighter Cyan */
+            --primary-cyan: #22d3ee;
             --accent-glow: rgba(34, 211, 238, 0.6);
             --text-main: #f8fafc;
-            --text-muted: #cbd5e1; /* Lighter grey for better readability */
+            --text-muted: #cbd5e1;
             --gradient-text: linear-gradient(135deg, #22d3ee, #60a5fa);
             --fire-gradient: linear-gradient(135deg, #ff4500, #ffaa00);
             --glass-border: rgba(255, 255, 255, 0.1);
@@ -108,7 +108,6 @@
         .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 40px; }
 
         /* === Glassmorphism Cards (Features) === */
-        .features { position: relative; }
         .glass-card {
             background: var(--bg-panel); backdrop-filter: blur(20px);
             border: 1px solid var(--glass-border); border-radius: 20px;
@@ -119,10 +118,7 @@
             content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px;
             background: var(--gradient-text); transform: scaleX(0); transform-origin: left; transition: 0.5s;
         }
-        .glass-card:hover {
-            transform: translateY(-12px); background: var(--bg-panel-hover);
-            border-color: rgba(34, 211, 238, 0.4); box-shadow: 0 25px 50px rgba(34, 211, 238, 0.15);
-        }
+        .glass-card:hover { transform: translateY(-12px); background: var(--bg-panel-hover); border-color: rgba(34, 211, 238, 0.4); box-shadow: 0 25px 50px rgba(34, 211, 238, 0.15); }
         .glass-card:hover::before { transform: scaleX(1); }
         .icon-box { font-size: 45px; color: var(--primary-cyan); margin-bottom: 30px; filter: drop-shadow(0 0 10px var(--primary-cyan)); }
         .glass-card h3 { font-size: 1.6rem; margin-bottom: 15px; color: #fff; }
@@ -147,7 +143,28 @@
         .p-btn i { margin-left: 8px; transition: 0.3s; }
         .project-card:hover .p-btn i { transform: translateX(8px); }
 
-        /* === Leadership Team === */
+        /* === Reviews / Testimonials Section === */
+        .review-card {
+            background: var(--bg-panel); backdrop-filter: blur(15px); padding: 45px 35px;
+            border-radius: 20px; border: 1px solid var(--glass-border); transition: 0.4s;
+            position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .review-card:hover { border-color: var(--primary-cyan); transform: translateY(-8px); box-shadow: 0 20px 40px rgba(34, 211, 238, 0.15); background: var(--bg-panel-hover); }
+        .quote-icon { position: absolute; top: 30px; right: 30px; font-size: 45px; color: rgba(255,255,255,0.03); transition: 0.4s; }
+        .review-card:hover .quote-icon { color: rgba(34, 211, 238, 0.1); transform: scale(1.1); }
+        .stars { color: #facc15; font-size: 15px; margin-bottom: 20px; text-shadow: 0 0 10px rgba(250, 204, 21, 0.4); }
+        .review-txt { font-size: 1.05rem; font-style: italic; color: var(--text-main); margin-bottom: 30px; line-height: 1.8; }
+        
+        .client-meta { display: flex; align-items: center; gap: 15px; }
+        .client-img-wrapper {
+            width: 60px; height: 60px; border-radius: 50%; overflow: hidden;
+            border: 2px solid var(--primary-cyan); padding: 2px;
+        }
+        .client-img-wrapper img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+        .client-meta h4 { font-size: 1.15rem; margin-bottom: 2px; color: #fff; }
+        .client-meta p { font-size: 0.8rem; color: var(--primary-cyan); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* === Leadership Team (6 Members) === */
         .team-card {
             background: var(--bg-panel); padding: 50px 30px; text-align: center;
             border-radius: 20px; border: 1px solid var(--glass-border); transition: 0.5s;
@@ -155,7 +172,11 @@
         }
         .team-card:hover { transform: translateY(-10px); border-color: var(--primary-cyan); box-shadow: 0 15px 40px rgba(34, 211, 238, 0.15); background: var(--bg-panel-hover); }
         
-        .supervisor { grid-column: 1 / -1; max-width: 850px; margin: 0 auto 40px; background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.4)); border: 1px solid var(--primary-cyan); box-shadow: 0 0 40px rgba(34, 211, 238, 0.2); }
+        .supervisor { 
+            grid-column: 1 / -1; max-width: 850px; margin: 0 auto 40px; 
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.4)); 
+            border: 1px solid var(--primary-cyan); box-shadow: 0 0 40px rgba(34, 211, 238, 0.2); 
+        }
         
         .team-avatar {
             width: 150px; height: 150px; margin: 0 auto 30px; border-radius: 50%;
@@ -211,6 +232,19 @@
         .m-gallery img { width: 100%; height: 300px; object-fit: cover; border-radius: 12px; transition: 0.4s; border: 1px solid var(--glass-border); }
         .m-gallery img:hover { transform: scale(1.03); border-color: var(--primary-cyan); box-shadow: 0 10px 30px rgba(34,211,238,0.2); }
 
+        /* === Footer === */
+        footer { background: #010308; padding: 100px 8% 40px; border-top: 1px solid rgba(255,255,255,0.05); }
+        .f-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 50px; margin-bottom: 60px; }
+        .f-logo { font-size: 24px; font-weight: 900; color: #fff; margin-bottom: 25px; display: flex; align-items: center; gap: 12px; }
+        .f-logo i { color: var(--primary-cyan); font-size: 28px; }
+        .f-txt { color: var(--text-muted); font-size: 1rem; max-width: 400px; }
+        .f-links h4 { color: #fff; margin-bottom: 25px; font-size: 1.2rem; }
+        .f-links ul { list-style: none; }
+        .f-links li { margin-bottom: 15px; }
+        .f-links a { color: var(--text-muted); transition: 0.3s; font-size: 1rem; }
+        .f-links a:hover { color: var(--primary-cyan); padding-left: 5px; }
+        .f-bottom { text-align: center; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.05); color: var(--text-muted); font-size: 0.9rem; }
+
         /* Utilities */
         .fade-in { opacity: 0; transform: translateY(40px); transition: 0.8s cubic-bezier(0.25, 1, 0.5, 1); }
         .fade-in.appear { opacity: 1; transform: translateY(0); }
@@ -226,6 +260,7 @@
         <ul class="nav-links">
             <li><a href="#features">Architecture</a></li>
             <li><a href="#portfolio">Deployments</a></li>
+            <li><a href="#reviews">Testimonials</a></li>
             <li><a href="#team">Leadership</a></li>
         </ul>
         <button class="btn-demo">Request Enterprise Demo</button>
@@ -245,6 +280,32 @@
             </div>
         </div>
     </header>
+
+    <!-- Core Features -->
+    <section class="section-pad" id="features">
+        <div class="section-header fade-in">
+            <h2 class="section-title">Architected for <span>Survival</span></h2>
+            <p class="section-subtitle">Discover the proprietary engineering that sets Home Guard apart from consumer-grade IoT toys.</p>
+        </div>
+        
+        <div class="grid-3">
+            <div class="glass-card fade-in">
+                <div class="icon-box"><i class="fa-solid fa-network-wired"></i></div>
+                <h3>VLAN Core Isolation</h3>
+                <p>Life-safety networks are strictly decoupled from public internet layers, ensuring absolute immunity against external cyber-attacks and bandwidth throttling.</p>
+            </div>
+            <div class="glass-card fade-in">
+                <div class="icon-box"><i class="fa-solid fa-microchip"></i></div>
+                <h3>RTOS Edge Processing</h3>
+                <p>Dependency on the cloud is a vulnerability. Our localized microcontrollers execute hazard analysis and response in milliseconds natively on-site.</p>
+            </div>
+            <div class="glass-card fade-in">
+                <div class="icon-box"><i class="fa-solid fa-truck-medical"></i></div>
+                <h3>H2X Dispatch Engine</h3>
+                <p>Automated handshakes with civil defense APIs. The system transmits encrypted coordinate and biometric data to paramedics before human verification.</p>
+            </div>
+        </div>
+    </section>
 
     <!-- Portfolio / 6 Masterpieces -->
     <section class="section-pad" id="portfolio">
@@ -269,7 +330,7 @@
                 <div class="p-info">
                     <span class="p-tag">Advanced Healthcare</span>
                     <h3>Autonomous Care Facility</h3>
-                    <p>An invisible AI-driven thermal grid that predicts patient falls before they happen, initiating paramedic dispatch with zero human intervention.</p>
+                    <p>An invisible AI-driven thermal grid that predicts patient falls before they happen, initiating paramedic dispatch automatically.</p>
                     <span class="p-btn">READ CASE STUDY <i class="fa-solid fa-arrow-right"></i></span>
                 </div>
             </div>
@@ -279,7 +340,7 @@
                 <div class="p-info">
                     <span class="p-tag">Corporate Citadel</span>
                     <h3>Nexus 50-Story Hub</h3>
-                    <p>Handling 10,000+ daily data points. Our VLAN-segregated architecture thwarted simulated state-sponsored cyber attacks during penetration testing.</p>
+                    <p>Handling 10,000+ daily data points. Our VLAN-segregated architecture thwarted simulated state-sponsored cyber attacks.</p>
                     <span class="p-btn">READ CASE STUDY <i class="fa-solid fa-arrow-right"></i></span>
                 </div>
             </div>
@@ -289,7 +350,7 @@
                 <div class="p-info">
                     <span class="p-tag">5-Star Hospitality</span>
                     <h3>The Pearl Island Resort</h3>
-                    <p>120 suites equipped with our proprietary IP67 bio-sensors. The system isolates HVAC and alerts civil defense before the first wisp of smoke is visible.</p>
+                    <p>120 suites equipped with our proprietary IP67 bio-sensors. The system isolates HVAC and alerts civil defense instantly.</p>
                     <span class="p-btn">READ CASE STUDY <i class="fa-solid fa-arrow-right"></i></span>
                 </div>
             </div>
@@ -299,7 +360,7 @@
                 <div class="p-info">
                     <span class="p-tag">Decentralized City</span>
                     <h3>Cairo Mega-Compound</h3>
-                    <p>A massive 500-node decentralized mesh network transforming a standard community into an interconnected, unbreakable smart-fortress.</p>
+                    <p>A massive 500-node decentralized mesh network transforming a standard community into an interconnected smart-fortress.</p>
                     <span class="p-btn">READ CASE STUDY <i class="fa-solid fa-arrow-right"></i></span>
                 </div>
             </div>
@@ -309,21 +370,92 @@
                 <div class="p-info">
                     <span class="p-tag">Assisted Living</span>
                     <h3>SecureLife Care Center</h3>
-                    <p>RTOS controllers integrated directly into the facility's life-support and lock mechanisms, reducing emergency response times by an unprecedented 74%.</p>
+                    <p>RTOS controllers integrated directly into life-support and lock mechanisms, reducing emergency response times by 74%.</p>
                     <span class="p-btn">READ CASE STUDY <i class="fa-solid fa-arrow-right"></i></span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Leadership Team -->
-    <section class="section-pad" id="team" style="border-top: 1px solid var(--glass-border); background: rgba(10,17,40,0.5);">
+    <!-- 6 Testimonials / Reviews (RESTORED) -->
+    <section class="section-pad" id="reviews" style="background: rgba(10, 17, 40, 0.5); border-top: 1px solid var(--glass-border);">
         <div class="section-header fade-in">
-            <h2 class="section-title">The Brains Behind <span>The Shield</span></h2>
-            <p class="section-subtitle">Meet the elite engineering directors orchestrating Home Guard's architectural executions.</p>
+            <h2 class="section-title">Verified <span>Trust</span></h2>
+            <p class="section-subtitle">Real feedback from developers, homeowners, and facility directors who depend on our engineering every single day.</p>
         </div>
         
         <div class="grid-3">
+            <div class="review-card fade-in">
+                <i class="fa-solid fa-quote-right quote-icon"></i>
+                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="review-txt">"The H2X emergency system gives me absolute peace of mind. Knowing the system contacts the fire department instantly before we even smell smoke is incredible engineering."</p>
+                <div class="client-meta">
+                    <div class="client-img-wrapper"><img src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?q=80&w=200&auto=format&fit=crop" alt="Yousef"></div>
+                    <div><h4>Yousef El-Sweisy</h4><p>Estate Owner</p></div>
+                </div>
+            </div>
+
+            <div class="review-card fade-in">
+                <i class="fa-solid fa-quote-right quote-icon"></i>
+                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="review-txt">"As someone living alone, Home Guard's custom voice automation and fall detection have completely changed my life and independence. It's the ultimate safety net."</p>
+                <div class="client-meta">
+                    <div class="client-img-wrapper"><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=200&auto=format&fit=crop" alt="Sarah"></div>
+                    <div><h4>Sarah El-Din</h4><p>Resident</p></div>
+                </div>
+            </div>
+
+            <div class="review-card fade-in">
+                <i class="fa-solid fa-quote-right quote-icon"></i>
+                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="review-txt">"The technical architecture is flawless. Separating the security network from the main internet via VLANs proves these guys understand true enterprise cyber security."</p>
+                <div class="client-meta">
+                    <div class="client-img-wrapper"><img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=200&auto=format&fit=crop" alt="Tarek"></div>
+                    <div><h4>Tarek Hassan</h4><p>Facility Manager</p></div>
+                </div>
+            </div>
+
+            <div class="review-card fade-in">
+                <i class="fa-solid fa-quote-right quote-icon"></i>
+                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="review-txt">"Integrating their API directly into our compound's civil defense protocol saved us millions in traditional infrastructure. It's the absolute future of gated communities."</p>
+                <div class="client-meta">
+                    <div class="client-img-wrapper"><img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=200&auto=format&fit=crop" alt="Momen"></div>
+                    <div><h4>Momen Mostafa</h4><p>Real Estate Developer</p></div>
+                </div>
+            </div>
+
+            <div class="review-card fade-in">
+                <i class="fa-solid fa-quote-right quote-icon"></i>
+                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="review-txt">"We had a total power outage during a storm, and the offline fallback mode kept all security sensors and emergency comms running flawlessly. Outstanding resilience."</p>
+                <div class="client-meta">
+                    <div class="client-img-wrapper"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop" alt="Mahmoud"></div>
+                    <div><h4>Mahmoud Abdelrasoul</h4><p>Homeowner</p></div>
+                </div>
+            </div>
+
+            <div class="review-card fade-in">
+                <i class="fa-solid fa-quote-right quote-icon"></i>
+                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="review-txt">"Our hotel suites are now 100% automated with Home Guard. The zero-latency response to smoke detection is exactly what premium hospitality safety regulations demand."</p>
+                <div class="client-meta">
+                    <div class="client-img-wrapper"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop" alt="Bahiri"></div>
+                    <div><h4>Mohamed Bahiri</h4><p>Operations Director</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Team (6 Members RESTORED) -->
+    <section class="section-pad" id="team">
+        <div class="section-header fade-in">
+            <h2 class="section-title">The Brains Behind <span>The Shield</span></h2>
+            <p class="section-subtitle">Meet the elite engineering directors orchestrating Home Guard's architectural executions globally.</p>
+        </div>
+        
+        <div class="grid-3">
+            <!-- 1. General Supervisor -->
             <div class="team-card supervisor fade-in">
                 <!-- Change "ahmad.jpg" to your actual picture file name -->
                 <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=500&auto=format&fit=crop" class="team-avatar" alt="Ahmad Gamal">
@@ -332,6 +464,7 @@
                 <p class="team-desc">Architecting the global vision. Directing strategic mega-deployments, leading international marketing strategies, and ensuring total stakeholder alignment.</p>
             </div>
 
+            <!-- 2. Software Lead -->
             <div class="team-card fade-in">
                 <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=500&auto=format&fit=crop" class="team-avatar" alt="Eslam Ashraf">
                 <h3>Eng. Eslam Ashraf</h3>
@@ -339,6 +472,7 @@
                 <p class="team-desc">The mastermind behind our Zero-Latency cloud architecture, H2X API protocols, and military-grade backend encryption.</p>
             </div>
             
+            <!-- 3. Hardware Lead -->
             <div class="team-card fade-in">
                 <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=500&auto=format&fit=crop" class="team-avatar" alt="Hatem Saied">
                 <h3>Eng. Hatem Saied</h3>
@@ -346,11 +480,28 @@
                 <p class="team-desc">Commands the physical realm. Designs complex RTOS edge nodes, ruggedized IoT arrays, and autonomous robotics integrations.</p>
             </div>
             
+            <!-- 4. QA Lead -->
             <div class="team-card fade-in">
                 <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=500&auto=format&fit=crop" class="team-avatar" alt="Mostafa Essam">
                 <h3>Eng. Mostafa Essam</h3>
                 <span class="team-role">Director of QA & Compliance</span>
-                <p class="team-desc">The ultimate gatekeeper. Enforces rigorous ISO stress-tests and secures global civil defense certifications before any line of code goes live.</p>
+                <p class="team-desc">The ultimate gatekeeper. Enforces rigorous ISO stress-tests and secures global civil defense certifications before any code goes live.</p>
+            </div>
+
+            <!-- 5. Operations Lead -->
+            <div class="team-card fade-in">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=500&auto=format&fit=crop" class="team-avatar" alt="Ahmed Mohamed">
+                <h3>Eng. Ahmed Mohamed</h3>
+                <span class="team-role">Director of Operations</span>
+                <p class="team-desc">Drives critical path execution on the ground. Masters cross-departmental risk mitigation strategies for massive physical deployments.</p>
+            </div>
+
+            <!-- 6. Logistics Lead -->
+            <div class="team-card fade-in">
+                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=500&auto=format&fit=crop" class="team-avatar" alt="Alaa Ashraf">
+                <h3>Eng. Alaa Ashraf</h3>
+                <span class="team-role">Director of Global Logistics</span>
+                <p class="team-desc">Controls multi-million dollar resource allocations, budget pipelines, and ensures hardware supply chains remain uninterrupted.</p>
             </div>
         </div>
     </section>
@@ -384,6 +535,27 @@
             </div>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="f-grid">
+            <div>
+                <div class="f-logo"><i class="fa-solid fa-shield-halved"></i> HOME GUARD</div>
+                <p class="f-txt">Engineered for absolute safety. We provide military-grade smart infrastructure for residential, commercial, and healthcare sectors globally.</p>
+            </div>
+            <div class="f-links">
+                <h4>Platform</h4>
+                <ul><li><a href="#">H2X Protocol</a></li><li><a href="#">VLAN Architecture</a></li><li><a href="#">RTOS Edge Node</a></li></ul>
+            </div>
+            <div class="f-links">
+                <h4>Company</h4>
+                <ul><li><a href="#team">Leadership</a></li><li><a href="#">Investor Relations</a></li><li><a href="#">ISO Certificates</a></li></ul>
+            </div>
+        </div>
+        <div class="f-bottom">
+            <p>&copy; 2026 HOME GUARD Smart Systems. Built to Protect. All rights reserved.</p>
+        </div>
+    </footer>
 
     <!-- JavaScript -->
     <script>
