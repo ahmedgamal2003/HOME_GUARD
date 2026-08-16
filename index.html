@@ -182,11 +182,12 @@
             border: 1px solid var(--primary-cyan); box-shadow: 0 0 40px rgba(34, 211, 238, 0.2); 
         }
         
+        /* This is the class that keeps your images perfectly sized */
         .team-avatar {
             width: 130px; height: 130px; margin: 0 auto 25px; border-radius: 50%;
             object-fit: cover; object-position: center top; border: 4px solid transparent;
             background: linear-gradient(#0a1128, #0a1128) padding-box, var(--gradient-text) border-box;
-            padding: 5px; transition: 0.5s;
+            padding: 5px; transition: 0.5s; display: block;
         }
         .team-card:hover .team-avatar { transform: scale(1.05); box-shadow: 0 0 20px rgba(34, 211, 238, 0.5); }
         .supervisor .team-avatar { width: 160px; height: 160px; }
@@ -329,7 +330,7 @@
         </div>
     </nav>
 
-    <!-- Hero Section (Aligned with Project Report) -->
+    <!-- Hero Section -->
     <header class="hero" id="home">
         <div class="hero-content fade-in">
             <span class="tech-badge"><i class="fa-solid fa-shield-heart"></i> Autonomous Safety Infrastructure</span>
@@ -381,7 +382,7 @@
         </div>
     </section>
 
-    <!-- Portfolio / 6 Masterpieces (Images Updated to Reliable Ones) -->
+    <!-- Portfolio / Deployments -->
     <section class="section-pad" id="portfolio">
         <div class="section-header fade-in">
             <h2 class="section-title">Masterpiece <span>Deployments</span></h2>
@@ -451,7 +452,7 @@
         </div>
     </section>
 
-    <!-- 6 Testimonials / Reviews -->
+    <!-- Testimonials / Reviews -->
     <section class="section-pad" id="reviews" style="background: rgba(10, 17, 40, 0.5); border-top: 1px solid var(--glass-border);">
         <div class="section-header fade-in">
             <h2 class="section-title">Verified <span>Trust</span></h2>
@@ -521,7 +522,7 @@
         </div>
     </section>
 
-    <!-- Leadership Team (6 Members) -->
+    <!-- Leadership Team -->
     <section class="section-pad" id="team">
         <div class="section-header fade-in">
             <h2 class="section-title">The Brains Behind <span>The Shield</span></h2>
@@ -529,21 +530,24 @@
         </div>
         
         <div class="grid-3">
+            <!-- 1. General Supervisor -->
             <div class="team-card supervisor fade-in">
-                <!-- IMPORTANT: Change "ahmad.jpg" to your real photo file name before hosting -->
+                <!-- IMPORTANT: class="team-avatar" is what keeps the image perfectly sized -->
                 <img src="Ahmad.png" class="team-avatar" alt="Ahmad Gamal">
                 <h3>Eng. Ahmad Gamal</h3>
                 <span class="team-role">General Supervisor & Project Director</span>
                 <p class="team-desc">Architecting the global vision. Directing strategic mega-deployments, leading international marketing strategies, and ensuring total stakeholder alignment.</p>
             </div>
 
+            <!-- 2. Software Lead -->
             <div class="team-card fade-in">
-                <img src="E.png" alt="Eslam Ashraf">
+                <img src="E.png" class="team-avatar" alt="Eslam Ashraf">
                 <h3>Eng. Eslam Ashraf</h3>
                 <span class="team-role">Head of Software Engineering</span>
                 <p class="team-desc">The mastermind behind our Zero-Latency cloud architecture, H2X API protocols, and military-grade backend encryption.</p>
             </div>
             
+            <!-- 3. Hardware Lead -->
             <div class="team-card fade-in">
                 <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=500&q=80" class="team-avatar" alt="Hatem Saied">
                 <h3>Eng. Hatem Saied</h3>
@@ -551,6 +555,7 @@
                 <p class="team-desc">Commands the physical realm. Designs complex RTOS edge nodes, ruggedized IoT arrays, and autonomous robotics integrations.</p>
             </div>
             
+            <!-- 4. QA Lead -->
             <div class="team-card fade-in">
                 <img src="Mos.png" class="team-avatar" alt="Mostafa Essam">
                 <h3>Eng. Mostafa Essam</h3>
@@ -558,15 +563,18 @@
                 <p class="team-desc">The ultimate gatekeeper. Enforces rigorous ISO stress-tests and secures global civil defense certifications before any code goes live.</p>
             </div>
 
+            <!-- 5. Operations Lead -->
             <div class="team-card fade-in">
-                <img src="Am.png" alt="Ahmed Mohamed">
+                <img src="Am.png" class="team-avatar" alt="Ahmed Mohamed">
                 <h3>Eng. Ahmed Mohamed</h3>
                 <span class="team-role">Director of Operations</span>
                 <p class="team-desc">Drives critical path execution on the ground. Masters cross-departmental risk mitigation strategies for massive physical deployments.</p>
             </div>
 
+            <!-- 6. Logistics Lead -->
             <div class="team-card fade-in">
-                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=500&q=80" class="team-avatar" alt="Alaa Ashraf">
+                <!-- 3D Hijab Girl Avatar from Flaticon -->
+                <img src="https://cdn-icons-png.flaticon.com/512/4140/4140047.png" class="team-avatar" alt="Alaa Ashraf">
                 <h3>Eng. Alaa Ashraf</h3>
                 <span class="team-role">Director of Global Logistics</span>
                 <p class="team-desc">Controls multi-million dollar resource allocations, budget pipelines, and ensures hardware supply chains remain uninterrupted.</p>
