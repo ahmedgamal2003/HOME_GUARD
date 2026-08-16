@@ -3,24 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HOME GUARD | Advanced Smart Infrastructure</title>
+    <title>HOME GUARD | Elite Smart Infrastructure</title>
     <!-- Premium Fonts: Montserrat for Headings, Inter for Body -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;700;800;900&display=swap" rel="stylesheet">
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* === Ultra Premium Theme === */
+        /* === Elite Bright-Cyber Theme === */
         :root {
-            --bg-dark: #030712;
-            --bg-panel: rgba(17, 24, 39, 0.7);
-            --bg-panel-hover: rgba(31, 41, 55, 0.9);
+            --bg-dark: #0a1128; /* Lighter, rich navy blue instead of pure black */
+            --bg-panel: rgba(30, 58, 138, 0.25); /* Bright transparent blue */
+            --bg-panel-hover: rgba(37, 99, 235, 0.15);
             --primary-blue: #3b82f6;
-            --primary-cyan: #06b6d4;
-            --accent-glow: rgba(6, 182, 212, 0.4);
+            --primary-cyan: #22d3ee; /* Brighter Cyan */
+            --accent-glow: rgba(34, 211, 238, 0.6);
             --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --gradient-text: linear-gradient(135deg, #06b6d4, #3b82f6);
-            --fire-gradient: linear-gradient(135deg, #f97316, #ef4444);
+            --text-muted: #cbd5e1; /* Lighter grey for better readability */
+            --gradient-text: linear-gradient(135deg, #22d3ee, #60a5fa);
+            --fire-gradient: linear-gradient(135deg, #ff4500, #ffaa00);
+            --glass-border: rgba(255, 255, 255, 0.1);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
@@ -36,190 +37,182 @@
         h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; }
         a { text-decoration: none; color: inherit; }
 
-        /* === Dynamic Background === */
+        /* === Dynamic Luminous Background === */
         .bg-grid {
             position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-            background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-                              linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
-            background-size: 50px 50px; z-index: -1; pointer-events: none;
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(34, 211, 238, 0.08), transparent 40%),
+                radial-gradient(circle at 85% 30%, rgba(59, 130, 246, 0.08), transparent 40%),
+                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 100% 100%, 100% 100%, 60px 60px, 60px 60px;
+            z-index: -1; pointer-events: none;
         }
 
         /* === Navbar === */
         nav {
             position: fixed; top: 0; width: 100%; padding: 20px 8%;
             display: flex; justify-content: space-between; align-items: center;
-            background: rgba(3, 7, 18, 0.8); backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255,255,255,0.05); z-index: 1000;
-            transition: all 0.3s ease;
+            background: rgba(10, 17, 40, 0.75); backdrop-filter: blur(25px);
+            border-bottom: 1px solid var(--glass-border); z-index: 1000;
+            transition: all 0.3s ease; box-shadow: 0 4px 30px rgba(0,0,0,0.3);
         }
-        .logo { font-size: 24px; font-weight: 900; letter-spacing: 1px; display: flex; align-items: center; gap: 10px; }
-        .logo i { background: var(--gradient-text); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 28px;}
+        .logo { font-size: 26px; font-weight: 900; letter-spacing: 1px; display: flex; align-items: center; gap: 12px; }
+        .logo i { background: var(--gradient-text); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 32px; filter: drop-shadow(0 0 8px var(--primary-cyan));}
         .nav-links { list-style: none; display: flex; gap: 40px; }
-        .nav-links li a { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); transition: 0.3s; }
-        .nav-links li a:hover { color: var(--primary-cyan); }
+        .nav-links li a { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: #e2e8f0; transition: 0.3s; }
+        .nav-links li a:hover { color: var(--primary-cyan); text-shadow: 0 0 10px var(--accent-glow); }
         
         .btn-demo {
-            background: var(--gradient-text); color: #fff; padding: 12px 30px;
-            border-radius: 8px; border: none; font-weight: 700; font-family: 'Inter', sans-serif;
-            cursor: pointer; transition: 0.3s; box-shadow: 0 4px 15px var(--accent-glow);
+            background: var(--gradient-text); color: #0a1128; padding: 12px 35px;
+            border-radius: 50px; border: none; font-weight: 800; font-family: 'Inter', sans-serif;
+            cursor: pointer; transition: 0.4s; box-shadow: 0 0 20px rgba(34, 211, 238, 0.5);
+            text-transform: uppercase; letter-spacing: 1px;
         }
-        .btn-demo:hover { transform: translateY(-3px); box-shadow: 0 8px 25px var(--accent-glow); }
+        .btn-demo:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 0 30px var(--primary-cyan); color: #fff;}
 
         /* === Hero Section === */
         .hero {
             min-height: 100vh; display: flex; align-items: center; padding: 0 8%;
-            background: linear-gradient(90deg, rgba(3, 7, 18, 1) 20%, rgba(3, 7, 18, 0.4) 100%),
-                        url('https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
+            background: linear-gradient(90deg, rgba(10, 17, 40, 0.95) 30%, rgba(10, 17, 40, 0.2) 100%),
+                        url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2075&auto=format&fit=crop') center/cover no-repeat;
             position: relative;
         }
-        .hero-content { max-width: 800px; z-index: 2; margin-top: 80px; }
+        .hero-content { max-width: 850px; z-index: 2; margin-top: 80px; }
         
         .tech-badge {
-            display: inline-block; padding: 8px 20px; background: rgba(6, 182, 212, 0.1);
-            border: 1px solid rgba(6, 182, 212, 0.3); border-radius: 50px; color: var(--primary-cyan);
-            font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 30px;
+            display: inline-block; padding: 8px 25px; background: rgba(34, 211, 238, 0.15);
+            border: 1px solid var(--primary-cyan); border-radius: 50px; color: var(--primary-cyan);
+            font-size: 13px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 30px;
+            box-shadow: 0 0 15px rgba(34, 211, 238, 0.3); backdrop-filter: blur(5px);
         }
-        .hero-content h1 { font-size: 4.5rem; line-height: 1.1; margin-bottom: 25px; letter-spacing: -1px; }
-        .hero-content h1 span { background: var(--gradient-text); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero-content p { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 40px; max-width: 600px; }
+        .hero-content h1 { font-size: 5.2rem; line-height: 1.1; margin-bottom: 25px; letter-spacing: -1px; text-shadow: 0 10px 20px rgba(0,0,0,0.5); }
+        .hero-content h1 span { background: var(--gradient-text); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 0 10px rgba(34, 211, 238, 0.3));}
+        .hero-content p { font-size: 1.25rem; color: #e2e8f0; margin-bottom: 45px; max-width: 650px; font-weight: 400; text-shadow: 0 2px 10px rgba(0,0,0,0.8); }
 
         .hero-stats {
-            display: flex; gap: 40px; margin-top: 50px; padding: 25px 35px;
-            background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05);
-            border-radius: 12px; backdrop-filter: blur(10px); display: inline-flex;
+            display: flex; gap: 40px; margin-top: 50px; padding: 25px 40px;
+            background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border);
+            border-radius: 16px; backdrop-filter: blur(15px); display: inline-flex;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
-        .hero-stats div h4 { font-size: 2rem; color: #fff; margin-bottom: 5px; }
-        .hero-stats div p { color: var(--primary-cyan); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+        .hero-stats div h4 { font-size: 2.2rem; color: #fff; margin-bottom: 5px; text-shadow: 0 0 10px rgba(255,255,255,0.3); }
+        .hero-stats div p { color: var(--primary-cyan); font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; }
 
         /* === General Section Formatting === */
-        .section-pad { padding: 120px 8%; }
-        .section-header { text-align: center; margin-bottom: 70px; }
-        .section-title { font-size: 3rem; margin-bottom: 15px; font-weight: 800; }
-        .section-title span { color: var(--primary-cyan); }
-        .section-subtitle { color: var(--text-muted); font-size: 1.1rem; max-width: 650px; margin: 0 auto; }
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .section-pad { padding: 130px 8%; }
+        .section-header { text-align: center; margin-bottom: 80px; }
+        .section-title { font-size: 3.8rem; margin-bottom: 20px; font-weight: 900; letter-spacing: -1px; text-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+        .section-title span { color: var(--primary-cyan); text-shadow: 0 0 20px rgba(34, 211, 238, 0.4); }
+        .section-subtitle { color: var(--text-muted); font-size: 1.2rem; max-width: 700px; margin: 0 auto; font-weight: 400; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 40px; }
 
-        /* === Glassmorphism Cards === */
+        /* === Glassmorphism Cards (Features) === */
+        .features { position: relative; }
         .glass-card {
-            background: var(--bg-panel); backdrop-filter: blur(16px);
-            border: 1px solid rgba(255,255,255,0.05); border-radius: 16px;
-            padding: 40px 30px; transition: 0.4s; position: relative; overflow: hidden;
+            background: var(--bg-panel); backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border); border-radius: 20px;
+            padding: 50px 40px; transition: 0.5s; position: relative; overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .glass-card::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px;
+            background: var(--gradient-text); transform: scaleX(0); transform-origin: left; transition: 0.5s;
         }
         .glass-card:hover {
-            transform: translateY(-8px); background: var(--bg-panel-hover);
-            border-color: rgba(6, 182, 212, 0.3); box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            transform: translateY(-12px); background: var(--bg-panel-hover);
+            border-color: rgba(34, 211, 238, 0.4); box-shadow: 0 25px 50px rgba(34, 211, 238, 0.15);
         }
-        .icon-box { font-size: 40px; color: var(--primary-cyan); margin-bottom: 25px; }
-        .glass-card h3 { font-size: 1.4rem; margin-bottom: 15px; color: #fff; }
-        .glass-card p { color: var(--text-muted); font-size: 0.95rem; }
+        .glass-card:hover::before { transform: scaleX(1); }
+        .icon-box { font-size: 45px; color: var(--primary-cyan); margin-bottom: 30px; filter: drop-shadow(0 0 10px var(--primary-cyan)); }
+        .glass-card h3 { font-size: 1.6rem; margin-bottom: 15px; color: #fff; }
+        .glass-card p { color: var(--text-muted); font-size: 1.05rem; }
 
         /* === Projects / Portfolio === */
         .project-card {
-            background: var(--bg-panel); border-radius: 16px; overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.05); cursor: pointer; transition: 0.4s;
+            background: rgba(15, 23, 42, 0.8); border-radius: 20px; overflow: hidden;
+            border: 1px solid var(--glass-border); cursor: pointer; transition: 0.5s;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
-        .project-card:hover { border-color: var(--primary-cyan); transform: translateY(-8px); box-shadow: 0 15px 30px rgba(6, 182, 212, 0.15); }
-        .p-img-box { height: 260px; overflow: hidden; position: relative; }
-        .p-img-box img { width: 100%; height: 100%; object-fit: cover; transition: 0.8s; }
-        .project-card:hover .p-img-box img { transform: scale(1.1); }
-        .p-info { padding: 30px; }
-        .p-tag { color: var(--primary-cyan); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; display: block; }
-        .p-info h3 { font-size: 1.5rem; margin-bottom: 10px; }
-        .p-btn { margin-top: 15px; display: inline-block; color: #fff; font-size: 0.85rem; font-weight: 600; letter-spacing: 1px; transition: 0.3s; }
+        .project-card:hover { border-color: var(--primary-cyan); transform: translateY(-10px); box-shadow: 0 20px 40px rgba(34, 211, 238, 0.2); }
+        .p-img-box { height: 280px; overflow: hidden; position: relative; }
+        .p-img-box img { width: 100%; height: 100%; object-fit: cover; transition: 1s cubic-bezier(0.25, 1, 0.5, 1); filter: brightness(0.9); }
+        .project-card:hover .p-img-box img { transform: scale(1.12); filter: brightness(1.1); }
+        .p-info { padding: 35px; position: relative; background: linear-gradient(to top, rgba(15, 23, 42, 1) 40%, transparent); margin-top: -50px; z-index: 2; }
+        .p-tag { color: var(--primary-cyan); font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2.5px; margin-bottom: 12px; display: inline-block; background: rgba(34,211,238,0.1); padding: 5px 12px; border-radius: 4px; }
+        .p-info h3 { font-size: 1.6rem; margin-bottom: 12px; }
+        .p-info p { color: var(--text-muted); font-size: 1rem; line-height: 1.6; }
+        .p-btn { margin-top: 20px; display: inline-block; color: #fff; font-size: 0.9rem; font-weight: 700; letter-spacing: 1.5px; transition: 0.3s; }
         .project-card:hover .p-btn { color: var(--primary-cyan); }
-
-        /* === Reviews / Testimonials === */
-        .review-box {
-            background: var(--bg-panel); padding: 40px; border-radius: 16px;
-            border: 1px solid rgba(255,255,255,0.05); position: relative; transition: 0.4s;
-        }
-        .review-box:hover { border-color: rgba(6, 182, 212, 0.3); }
-        .stars { color: #facc15; margin-bottom: 20px; font-size: 14px; }
-        .review-txt { font-size: 1rem; font-style: italic; color: var(--text-main); margin-bottom: 30px; }
-        
-        .client-meta { display: flex; align-items: center; gap: 15px; }
-        /* Smart Auto-Crop for images */
-        .client-img {
-            width: 55px; height: 55px; border-radius: 50%; object-fit: cover;
-            border: 2px solid var(--primary-cyan); padding: 2px;
-        }
-        .client-meta h4 { font-size: 1.1rem; }
-        .client-meta p { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 2px;}
+        .p-btn i { margin-left: 8px; transition: 0.3s; }
+        .project-card:hover .p-btn i { transform: translateX(8px); }
 
         /* === Leadership Team === */
         .team-card {
-            background: var(--bg-panel); padding: 40px 25px; text-align: center;
-            border-radius: 16px; border: 1px solid rgba(255,255,255,0.05); transition: 0.4s;
+            background: var(--bg-panel); padding: 50px 30px; text-align: center;
+            border-radius: 20px; border: 1px solid var(--glass-border); transition: 0.5s;
+            backdrop-filter: blur(15px);
         }
-        .team-card:hover { transform: translateY(-8px); border-color: var(--primary-cyan); }
+        .team-card:hover { transform: translateY(-10px); border-color: var(--primary-cyan); box-shadow: 0 15px 40px rgba(34, 211, 238, 0.15); background: var(--bg-panel-hover); }
         
-        .supervisor { grid-column: 1 / -1; max-width: 800px; margin: 0 auto 30px; background: linear-gradient(145deg, #0f172a, #082f49); border-color: var(--primary-cyan); }
+        .supervisor { grid-column: 1 / -1; max-width: 850px; margin: 0 auto 40px; background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.4)); border: 1px solid var(--primary-cyan); box-shadow: 0 0 40px rgba(34, 211, 238, 0.2); }
         
         .team-avatar {
-            width: 140px; height: 140px; margin: 0 auto 25px; border-radius: 50%;
-            object-fit: cover; border: 3px solid transparent;
-            background: linear-gradient(#0f172a, #0f172a) padding-box, var(--gradient-text) border-box;
-            padding: 4px;
+            width: 150px; height: 150px; margin: 0 auto 30px; border-radius: 50%;
+            object-fit: cover; object-position: center top; border: 4px solid transparent;
+            background: linear-gradient(#0a1128, #0a1128) padding-box, var(--gradient-text) border-box;
+            padding: 5px; transition: 0.5s;
         }
-        .supervisor .team-avatar { width: 170px; height: 170px; }
+        .team-card:hover .team-avatar { transform: scale(1.08); box-shadow: 0 0 25px rgba(34, 211, 238, 0.5); }
+        .supervisor .team-avatar { width: 190px; height: 190px; }
         
-        .team-card h3 { font-size: 1.5rem; margin-bottom: 5px; }
-        .team-role { color: var(--primary-cyan); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 15px; display: block; }
-        .team-desc { font-size: 0.95rem; color: var(--text-muted); }
+        .team-card h3 { font-size: 1.6rem; margin-bottom: 5px; color: #fff; }
+        .team-role { color: var(--primary-cyan); font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; display: block; }
+        .team-desc { font-size: 1.05rem; color: var(--text-muted); }
 
         /* === Interactive Modal (Case Study) === */
         .modal-wrap {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(3, 7, 18, 0.95); backdrop-filter: blur(15px);
-            z-index: 2000; display: none; opacity: 0; transition: 0.3s; overflow-y: auto; padding: 40px 5%;
+            background: rgba(3, 7, 18, 0.98); backdrop-filter: blur(25px);
+            z-index: 2000; display: none; opacity: 0; transition: 0.4s; overflow-y: auto; padding: 40px 5%;
         }
         .modal-wrap.active { display: block; opacity: 1; }
         
         .modal-close {
-            position: fixed; top: 30px; right: 5%; width: 50px; height: 50px; border-radius: 50%;
-            background: rgba(255,255,255,0.1); color: #fff; font-size: 24px;
-            display: flex; justify-content: center; align-items: center; cursor: pointer; z-index: 2001; transition: 0.3s;
+            position: fixed; top: 30px; right: 5%; width: 60px; height: 60px; border-radius: 50%;
+            background: rgba(255,255,255,0.05); color: #fff; font-size: 28px; border: 1px solid var(--glass-border);
+            display: flex; justify-content: center; align-items: center; cursor: pointer; z-index: 2001; transition: 0.4s;
         }
-        .modal-close:hover { background: var(--fire-gradient); transform: rotate(90deg); }
+        .modal-close:hover { background: var(--fire-gradient); transform: rotate(90deg) scale(1.1); border-color: transparent; box-shadow: 0 0 30px #ff4500; }
         
         .modal-box {
-            max-width: 1100px; margin: 0 auto; background: #0f172a; border-radius: 16px;
-            overflow: hidden; border: 1px solid rgba(6, 182, 212, 0.3);
-            animation: slideUp 0.5s ease; box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+            max-width: 1200px; margin: 0 auto; background: #0a1128; border-radius: 20px;
+            overflow: hidden; border: 1px solid rgba(34, 211, 238, 0.4);
+            animation: slideUp 0.6s cubic-bezier(0.25, 1, 0.5, 1); box-shadow: 0 30px 80px rgba(0,0,0,0.9);
         }
-        @keyframes slideUp { from { transform: translateY(40px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        @keyframes slideUp { from { transform: translateY(60px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
         
-        .m-hero { width: 100%; height: 450px; object-fit: cover; }
-        .m-body { padding: 50px; }
-        .m-body h2 { font-size: 3rem; margin-bottom: 10px; }
+        .m-hero { width: 100%; height: 550px; object-fit: cover; filter: brightness(1.1); }
+        .m-body { padding: 60px; }
+        .m-body h2 { font-size: 3.5rem; margin-bottom: 15px; letter-spacing: -1px; }
         
-        .case-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin: 40px 0; }
-        .case-box { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 30px; border-radius: 12px; }
-        .case-box h4 { font-size: 1.2rem; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
-        .case-box p { color: var(--text-muted); font-size: 0.95rem; }
+        .case-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin: 50px 0; }
+        .case-box { background: rgba(255,255,255,0.02); border: 1px solid var(--glass-border); padding: 40px; border-radius: 16px; transition: 0.3s; }
+        .case-box:hover { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.2); }
+        .case-box h4 { font-size: 1.4rem; margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
+        .case-box p { color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; }
         
-        .fire-box { background: linear-gradient(135deg, rgba(249, 115, 22, 0.05), rgba(239, 68, 68, 0.05)); border: 1px solid rgba(249, 115, 22, 0.3); }
-        .fire-box h4 { color: #f97316; }
-        .fire-box p { color: #f8fafc; }
+        .fire-box { background: linear-gradient(135deg, rgba(255, 69, 0, 0.08), rgba(255, 170, 0, 0.08)); border: 1px solid rgba(255, 69, 0, 0.4); position: relative; overflow: hidden;}
+        .fire-box::before { content: ''; position: absolute; top: 0; left: 0; width: 5px; height: 100%; background: var(--fire-gradient); }
+        .fire-box h4 { color: #ffaa00; text-shadow: 0 0 15px rgba(255, 69, 0, 0.5); }
+        .fire-box p { color: #fff; font-weight: 500; }
 
-        .m-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .m-gallery img { width: 100%; height: 250px; object-fit: cover; border-radius: 8px; }
-
-        /* === Footer === */
-        footer { background: #02040a; padding: 80px 8% 40px; border-top: 1px solid rgba(255,255,255,0.05); }
-        .f-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 50px; }
-        .f-logo { font-size: 22px; font-weight: 900; color: #fff; margin-bottom: 20px; }
-        .f-logo i { color: var(--primary-cyan); }
-        .f-txt { color: var(--text-muted); font-size: 0.9rem; max-width: 350px; }
-        .f-links h4 { color: #fff; margin-bottom: 20px; }
-        .f-links ul { list-style: none; }
-        .f-links li { margin-bottom: 10px; }
-        .f-links a { color: var(--text-muted); font-size: 0.9rem; transition: 0.3s; }
-        .f-links a:hover { color: var(--primary-cyan); }
-        .f-bottom { text-align: center; color: var(--text-muted); font-size: 0.85rem; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.05); }
+        .m-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; margin-top: 30px; }
+        .m-gallery img { width: 100%; height: 300px; object-fit: cover; border-radius: 12px; transition: 0.4s; border: 1px solid var(--glass-border); }
+        .m-gallery img:hover { transform: scale(1.03); border-color: var(--primary-cyan); box-shadow: 0 10px 30px rgba(34,211,238,0.2); }
 
         /* Utilities */
-        .fade-in { opacity: 0; transform: translateY(30px); transition: 0.8s ease-out; }
+        .fade-in { opacity: 0; transform: translateY(40px); transition: 0.8s cubic-bezier(0.25, 1, 0.5, 1); }
         .fade-in.appear { opacity: 1; transform: translateY(0); }
         body.modal-open { overflow: hidden; }
     </style>
@@ -233,18 +226,17 @@
         <ul class="nav-links">
             <li><a href="#features">Architecture</a></li>
             <li><a href="#portfolio">Deployments</a></li>
-            <li><a href="#reviews">Reviews</a></li>
             <li><a href="#team">Leadership</a></li>
         </ul>
-        <button class="btn-demo">Request Demo</button>
+        <button class="btn-demo">Request Enterprise Demo</button>
     </nav>
 
     <!-- Hero Section -->
     <header class="hero" id="home">
         <div class="hero-content fade-in">
-            <span class="tech-badge"><i class="fa-solid fa-microchip"></i> ISO Certified Enterprise</span>
+            <span class="tech-badge"><i class="fa-solid fa-microchip"></i> Global ISO Certified Framework</span>
             <h1>The Engineering of <br><span>Absolute Safety.</span></h1>
-            <p>We build intelligent, life-saving infrastructures. Featuring H2X emergency protocols, localized RTOS processing, and military-grade VLAN network isolation.</p>
+            <p>We do not build smart homes; we forge impenetrable, life-saving infrastructures. Featuring zero-latency H2X emergency protocols and military-grade VLAN isolation.</p>
             
             <div class="hero-stats">
                 <div><h4>99.9%</h4><p>Uptime</p></div>
@@ -254,217 +246,111 @@
         </div>
     </header>
 
-    <!-- Core Features -->
-    <section class="section-pad" id="features">
-        <div class="section-header fade-in">
-            <h2 class="section-title">Architected for <span>Survival</span></h2>
-            <p class="section-subtitle">Discover the proprietary engineering that sets Home Guard apart from consumer-grade IoT systems.</p>
-        </div>
-        
-        <div class="grid-3">
-            <div class="glass-card fade-in">
-                <div class="icon-box"><i class="fa-solid fa-network-wired"></i></div>
-                <h3>VLAN Core Isolation</h3>
-                <p>Life-safety networks are strictly decoupled from public internet layers, ensuring complete immunity against external cyber-attacks and bandwidth throttling.</p>
-            </div>
-            <div class="glass-card fade-in">
-                <div class="icon-box"><i class="fa-solid fa-microchip"></i></div>
-                <h3>RTOS Edge Processing</h3>
-                <p>Dependency on the cloud is a vulnerability. Our localized microcontrollers execute hazard analysis and response in milliseconds natively on-site.</p>
-            </div>
-            <div class="glass-card fade-in">
-                <div class="icon-box"><i class="fa-solid fa-truck-medical"></i></div>
-                <h3>H2X Dispatch Engine</h3>
-                <p>Automated handshakes with civil defense APIs. The system transmits encrypted coordinate and biometric data to paramedics before human verification.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio / 6 Deployments -->
+    <!-- Portfolio / 6 Masterpieces -->
     <section class="section-pad" id="portfolio">
         <div class="section-header fade-in">
-            <h2 class="section-title">Global <span>Deployments</span></h2>
-            <p class="section-subtitle">Click on any project to view our engineering challenges, deployed technologies, and the unique Home Guard edge.</p>
+            <h2 class="section-title">Masterpiece <span>Deployments</span></h2>
+            <p class="section-subtitle">Select a case study to uncover the extreme engineering challenges we solved and the proprietary technologies we deployed.</p>
         </div>
         
         <div class="grid-3">
             <div class="project-card fade-in" onclick="openModal(1)">
-                <div class="p-img-box"><img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=800&auto=format&fit=crop" alt="Azure Villa"></div>
+                <div class="p-img-box"><img src="https://images.unsplash.com/photo-1613490900233-141c5560d75d?q=80&w=1000&auto=format&fit=crop" alt="Azure Villa"></div>
                 <div class="p-info">
-                    <span class="p-tag">Luxury Residential</span>
-                    <h3>The Azure Villa Complex</h3>
-                    <p style="color: var(--text-muted); font-size: 0.95rem;">Full integration of climate control, automated perimeter security, and offline fallback systems.</p>
-                    <span class="p-btn">VIEW CASE STUDY <i class="fa-solid fa-arrow-right"></i></span>
+                    <span class="p-tag">Ultra-Luxury Estate</span>
+                    <h3>The Azure Mansion Grid</h3>
+                    <p>A $15M estate fortified with custom edge-nodes. The perimeter reacts to breaches in 0.2 milliseconds, independent of the cloud.</p>
+                    <span class="p-btn">READ CASE STUDY <i class="fa-solid fa-arrow-right"></i></span>
                 </div>
             </div>
             
             <div class="project-card fade-in" onclick="openModal(2)">
-                <div class="p-img-box"><img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=800&auto=format&fit=crop" alt="Accessible Apartment"></div>
+                <div class="p-img-box"><img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1000&auto=format&fit=crop" alt="Accessible Facility"></div>
                 <div class="p-info">
-                    <span class="p-tag">Healthcare Sector</span>
-                    <h3>Adaptive Smart Facility</h3>
-                    <p style="color: var(--text-muted); font-size: 0.95rem;">Designed for independent living with highly sensitive fall detection and medical emergency alerts.</p>
-                    <span class="p-btn">VIEW CASE STUDY <i class="fa-solid fa-arrow-right"></i></span>
+                    <span class="p-tag">Advanced Healthcare</span>
+                    <h3>Autonomous Care Facility</h3>
+                    <p>An invisible AI-driven thermal grid that predicts patient falls before they happen, initiating paramedic dispatch with zero human intervention.</p>
+                    <span class="p-btn">READ CASE STUDY <i class="fa-solid fa-arrow-right"></i></span>
                 </div>
             </div>
 
             <div class="project-card fade-in" onclick="openModal(3)">
-                <div class="p-img-box"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop" alt="Nexus Hub"></div>
+                <div class="p-img-box"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1000&auto=format&fit=crop" alt="Nexus Hub"></div>
                 <div class="p-info">
-                    <span class="p-tag">Enterprise HQ</span>
-                    <h3>Nexus Corporate Hub</h3>
-                    <p style="color: var(--text-muted); font-size: 0.95rem;">Enterprise-grade fire prevention, automated access control, and smart energy management.</p>
-                    <span class="p-btn">VIEW CASE STUDY <i class="fa-solid fa-arrow-right"></i></span>
+                    <span class="p-tag">Corporate Citadel</span>
+                    <h3>Nexus 50-Story Hub</h3>
+                    <p>Handling 10,000+ daily data points. Our VLAN-segregated architecture thwarted simulated state-sponsored cyber attacks during penetration testing.</p>
+                    <span class="p-btn">READ CASE STUDY <i class="fa-solid fa-arrow-right"></i></span>
                 </div>
             </div>
 
             <div class="project-card fade-in" onclick="openModal(4)">
-                <div class="p-img-box"><img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=800&auto=format&fit=crop" alt="Pearl Resort"></div>
+                <div class="p-img-box"><img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1000&auto=format&fit=crop" alt="Pearl Resort"></div>
                 <div class="p-info">
-                    <span class="p-tag">Hospitality Safety</span>
-                    <h3>Pearl Seaside Resort</h3>
-                    <p style="color: var(--text-muted); font-size: 0.95rem;">Centralized H2X emergency integration across 120 suites, ensuring instant civil defense response.</p>
-                    <span class="p-btn">VIEW CASE STUDY <i class="fa-solid fa-arrow-right"></i></span>
+                    <span class="p-tag">5-Star Hospitality</span>
+                    <h3>The Pearl Island Resort</h3>
+                    <p>120 suites equipped with our proprietary IP67 bio-sensors. The system isolates HVAC and alerts civil defense before the first wisp of smoke is visible.</p>
+                    <span class="p-btn">READ CASE STUDY <i class="fa-solid fa-arrow-right"></i></span>
                 </div>
             </div>
 
             <div class="project-card fade-in" onclick="openModal(5)">
-                <div class="p-img-box"><img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800&auto=format&fit=crop" alt="Smart Compound"></div>
+                <div class="p-img-box"><img src="https://images.unsplash.com/photo-1449844908441-8829872d2607?q=80&w=1000&auto=format&fit=crop" alt="Smart Compound"></div>
                 <div class="p-info">
-                    <span class="p-tag">Gated Community</span>
-                    <h3>Cairo Smart Compound</h3>
-                    <p style="color: var(--text-muted); font-size: 0.95rem;">VLAN-isolated infrastructure linking 50+ homes to a central security and ambulance dispatch node.</p>
-                    <span class="p-btn">VIEW CASE STUDY <i class="fa-solid fa-arrow-right"></i></span>
+                    <span class="p-tag">Decentralized City</span>
+                    <h3>Cairo Mega-Compound</h3>
+                    <p>A massive 500-node decentralized mesh network transforming a standard community into an interconnected, unbreakable smart-fortress.</p>
+                    <span class="p-btn">READ CASE STUDY <i class="fa-solid fa-arrow-right"></i></span>
                 </div>
             </div>
 
             <div class="project-card fade-in" onclick="openModal(6)">
-                <div class="p-img-box"><img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=800&auto=format&fit=crop" alt="ElderCare Facility"></div>
+                <div class="p-img-box"><img src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?q=80&w=1000&auto=format&fit=crop" alt="ElderCare Facility"></div>
                 <div class="p-info">
                     <span class="p-tag">Assisted Living</span>
-                    <h3>ElderCare System</h3>
-                    <p style="color: var(--text-muted); font-size: 0.95rem;">Extensive RTOS-based health monitoring and automatic lock-release during medical emergencies.</p>
-                    <span class="p-btn">VIEW CASE STUDY <i class="fa-solid fa-arrow-right"></i></span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="section-pad" id="reviews">
-        <div class="section-header fade-in">
-            <h2 class="section-title">Verified <span>Trust</span></h2>
-            <p class="section-subtitle">Real feedback from developers, homeowners, and facility directors who depend on our engineering.</p>
-        </div>
-        
-        <div class="grid-3">
-            <div class="review-box fade-in">
-                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                <p class="review-txt">"The H2X emergency system gives me absolute peace of mind. Knowing the system contacts the fire department instantly before we even smell smoke is incredible engineering."</p>
-                <div class="client-meta">
-                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=200&auto=format&fit=crop" class="client-img" alt="Yousef">
-                    <div><h4>Yousef El-Sweisy</h4><p>Villa Owner</p></div>
-                </div>
-            </div>
-
-            <div class="review-box fade-in">
-                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                <p class="review-txt">"As someone living alone, Home Guard's custom voice automation and fall detection have completely changed my life and independence. Highly recommended."</p>
-                <div class="client-meta">
-                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=200&auto=format&fit=crop" class="client-img" alt="Sarah">
-                    <div><h4>Sarah El-Din</h4><p>Apartment Resident</p></div>
-                </div>
-            </div>
-
-            <div class="review-box fade-in">
-                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                <p class="review-txt">"The technical architecture is flawless. Separating the security network from the main internet via VLANs proves these guys understand true enterprise cyber security."</p>
-                <div class="client-meta">
-                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=200&auto=format&fit=crop" class="client-img" alt="Tarek">
-                    <div><h4>Tarek Hassan</h4><p>Facility Manager</p></div>
-                </div>
-            </div>
-            
-            <div class="review-box fade-in">
-                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                <p class="review-txt">"Integrating their API directly into our compound's civil defense protocol saved us millions in traditional infrastructure. It's the absolute future of gated communities."</p>
-                <div class="client-meta">
-                    <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=200&auto=format&fit=crop" class="client-img" alt="Momen">
-                    <div><h4>Momen Mostafa</h4><p>Real Estate Developer</p></div>
-                </div>
-            </div>
-
-            <div class="review-box fade-in">
-                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                <p class="review-txt">"We had a total power outage during a storm, and the offline fallback mode kept all security sensors and emergency comms running flawlessly. Outstanding resilience."</p>
-                <div class="client-meta">
-                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop" class="client-img" alt="Mahmoud">
-                    <div><h4>Mahmoud Abdelrasoul</h4><p>Homeowner</p></div>
-                </div>
-            </div>
-
-            <div class="review-box fade-in">
-                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                <p class="review-txt">"Our hotel suites are now 100% automated with Home Guard. The zero-latency response to smoke detection is exactly what premium hospitality safety regulations demand."</p>
-                <div class="client-meta">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop" class="client-img" alt="Bahiri">
-                    <div><h4>Mohamed Bahiri</h4><p>Operations Director</p></div>
+                    <h3>SecureLife Care Center</h3>
+                    <p>RTOS controllers integrated directly into the facility's life-support and lock mechanisms, reducing emergency response times by an unprecedented 74%.</p>
+                    <span class="p-btn">READ CASE STUDY <i class="fa-solid fa-arrow-right"></i></span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Leadership Team -->
-    <section class="section-pad" id="team" style="border-top: 1px solid rgba(255,255,255,0.05);">
+    <section class="section-pad" id="team" style="border-top: 1px solid var(--glass-border); background: rgba(10,17,40,0.5);">
         <div class="section-header fade-in">
-            <h2 class="section-title">Executive <span>Leadership</span></h2>
-            <p class="section-subtitle">The directors and project managers orchestrating Home Guard's architectural executions.</p>
+            <h2 class="section-title">The Brains Behind <span>The Shield</span></h2>
+            <p class="section-subtitle">Meet the elite engineering directors orchestrating Home Guard's architectural executions.</p>
         </div>
         
         <div class="grid-3">
-            <!-- General Supervisor -->
             <div class="team-card supervisor fade-in">
-                <!-- IMPORTANT: Change the src link below to your actual image name like "ahmad.jpg" -->
+                <!-- Change "ahmad.jpg" to your actual picture file name -->
                 <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=500&auto=format&fit=crop" class="team-avatar" alt="Ahmad Gamal">
                 <h3>Eng. Ahmad Gamal</h3>
                 <span class="team-role">General Supervisor & Project Director</span>
-                <p class="team-desc">Directing global operations, beta deployments, strategic marketing, and high-level stakeholder alignment for enterprise launches.</p>
+                <p class="team-desc">Architecting the global vision. Directing strategic mega-deployments, leading international marketing strategies, and ensuring total stakeholder alignment.</p>
             </div>
 
-            <!-- Team Members -->
             <div class="team-card fade-in">
                 <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=500&auto=format&fit=crop" class="team-avatar" alt="Eslam Ashraf">
                 <h3>Eng. Eslam Ashraf</h3>
-                <span class="team-role">Project Manager (Software)</span>
-                <p class="team-desc">Overseeing core system architecture, API infrastructure, and real-time backend deployment.</p>
+                <span class="team-role">Head of Software Engineering</span>
+                <p class="team-desc">The mastermind behind our Zero-Latency cloud architecture, H2X API protocols, and military-grade backend encryption.</p>
             </div>
             
             <div class="team-card fade-in">
                 <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=500&auto=format&fit=crop" class="team-avatar" alt="Hatem Saied">
                 <h3>Eng. Hatem Saied</h3>
-                <span class="team-role">Project Manager (Hardware)</span>
-                <p class="team-desc">Managing physical IoT supply chains, sensor node placements, and industrial automation.</p>
+                <span class="team-role">Head of Hardware Infrastructure</span>
+                <p class="team-desc">Commands the physical realm. Designs complex RTOS edge nodes, ruggedized IoT arrays, and autonomous robotics integrations.</p>
             </div>
             
             <div class="team-card fade-in">
                 <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=500&auto=format&fit=crop" class="team-avatar" alt="Mostafa Essam">
                 <h3>Eng. Mostafa Essam</h3>
-                <span class="team-role">Project Manager (QA)</span>
-                <p class="team-desc">Enforcing ISO standards, conducting stress tests, and securing civil defense certifications.</p>
-            </div>
-            
-            <div class="team-card fade-in">
-                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=500&auto=format&fit=crop" class="team-avatar" alt="Ahmed Mohamed">
-                <h3>Eng. Ahmed Mohamed</h3>
-                <span class="team-role">Project Manager (Operations)</span>
-                <p class="team-desc">Driving critical path execution and cross-departmental risk mitigation strategies.</p>
-            </div>
-            
-            <div class="team-card fade-in">
-                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=500&auto=format&fit=crop" class="team-avatar" alt="Alaa Ashraf">
-                <h3>Eng. Alaa Ashraf</h3>
-                <span class="team-role">Project Manager (Logistics)</span>
-                <p class="team-desc">Controlling resource allocations, budget pipelines, and international logistics.</p>
+                <span class="team-role">Director of QA & Compliance</span>
+                <p class="team-desc">The ultimate gatekeeper. Enforces rigorous ISO stress-tests and secures global civil defense certifications before any line of code goes live.</p>
             </div>
         </div>
     </section>
@@ -475,7 +361,7 @@
         <div class="modal-box">
             <img src="" id="mImg" class="m-hero" alt="Project Hero">
             <div class="m-body">
-                <span class="p-tag" id="mTag" style="font-size: 1rem;"></span>
+                <span class="p-tag" id="mTag" style="font-size: 1.1rem;"></span>
                 <h2 id="mTitle"></h2>
                 
                 <div class="case-grid">
@@ -484,57 +370,34 @@
                         <p id="mChallenge"></p>
                     </div>
                     <div class="case-box">
-                        <h4><i class="fa-solid fa-microchip" style="color: var(--primary-cyan);"></i> Technologies</h4>
+                        <h4><i class="fa-solid fa-microchip" style="color: var(--primary-cyan);"></i> Engineering Tech</h4>
                         <p id="mTech"></p>
                     </div>
                     <div class="case-box fire-box">
-                        <h4><i class="fa-solid fa-fire-flame-curved"></i> The Home Guard Edge</h4>
+                        <h4><i class="fa-solid fa-fire-flame-curved"></i> The "Home Guard" Edge</h4>
                         <p id="mEdge"></p>
                     </div>
                 </div>
 
-                <h3 style="padding-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 1.8rem;">Deployment Gallery</h3>
+                <h3 style="padding-bottom: 15px; border-bottom: 1px solid var(--glass-border); font-size: 2rem; margin-top: 30px;">Architecture Gallery</h3>
                 <div class="m-gallery" id="mGallery"></div>
             </div>
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="f-grid">
-            <div>
-                <div class="f-logo"><i class="fa-solid fa-shield-halved"></i> HOME GUARD</div>
-                <p class="f-txt">Engineered for absolute safety. Military-grade smart infrastructure for residential and commercial sectors globally.</p>
-            </div>
-            <div class="f-links">
-                <h4>Platform</h4>
-                <ul><li><a href="#">H2X Protocol</a></li><li><a href="#">VLAN Architecture</a></li><li><a href="#">RTOS Node</a></li></ul>
-            </div>
-            <div class="f-links">
-                <h4>Company</h4>
-                <ul><li><a href="#team">Leadership</a></li><li><a href="#">Investors</a></li><li><a href="#">ISO Certificates</a></li></ul>
-            </div>
-        </div>
-        <div class="f-bottom">
-            <p>&copy; 2026 HOME GUARD Smart Systems. Built to Protect. All rights reserved.</p>
-        </div>
-    </footer>
-
     <!-- JavaScript -->
     <script>
-        // Navbar Scrolled Effect
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('navbar');
             if (window.scrollY > 50) {
-                nav.style.background = 'rgba(3, 7, 18, 0.95)';
-                nav.style.borderBottom = '1px solid rgba(6, 182, 212, 0.2)';
+                nav.style.background = 'rgba(10, 17, 40, 0.95)';
+                nav.style.borderBottom = '1px solid rgba(34, 211, 238, 0.3)';
             } else {
-                nav.style.background = 'rgba(3, 7, 18, 0.8)';
-                nav.style.borderBottom = '1px solid rgba(255,255,255,0.05)';
+                nav.style.background = 'rgba(10, 17, 40, 0.75)';
+                nav.style.borderBottom = '1px solid rgba(255,255,255,0.1)';
             }
         });
 
-        // Animations
         const faders = document.querySelectorAll('.fade-in');
         const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
         const appearOnScroll = new IntersectionObserver((entries, observer) => {
@@ -546,66 +409,64 @@
         }, appearOptions);
         faders.forEach(fader => { appearOnScroll.observe(fader); });
 
-        // Case Study Data
+        // === ELITE PROJECT DATA COPYWRITING ===
         const projects = {
             1: { 
-                title: "The Azure Villa Complex", tag: "Luxury Residential", 
-                img: "https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2000&auto=format&fit=crop", 
-                challenge: "Highly unstable local power grid and massive square footage requiring seamless sensor networking without dead zones.",
-                tech: "Custom STM32-based RTOS controllers, LoRaWAN for long-range sensor communication, and VLAN isolated networks.",
-                edge: "100% Offline Operability. If the national grid completely fails, our proprietary micro-grid fallback keeps the villa's hazard detection functional without a single millisecond of downtime.",
-                gallery: ["https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop", "https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=800&auto=format&fit=crop", "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop"] 
+                title: "The Azure Mansion Grid", tag: "Ultra-Luxury Estate", 
+                img: "https://images.unsplash.com/photo-1613490900233-141c5560d75d?q=80&w=1500&auto=format&fit=crop", 
+                challenge: "Securing a $15M sprawling estate spanning 5 acres against advanced physical and cyber intrusions, coupled with a highly unstable local power grid.",
+                tech: "Custom STM32 edge-nodes, embedded LoRaWAN meshing for zero-dead-zone communication, and complete VLAN architecture isolation.",
+                edge: "Absolute Offline Supremacy. If the national grid is severed and internet lines are cut, our proprietary micro-grid fallback ensures the estate's hazard detection and defense perimeter remain fully lethal and operational without a millisecond of downtime.",
+                gallery: ["https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop", "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800&auto=format&fit=crop", "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop"] 
             },
             2: { 
-                title: "Adaptive Smart Facility", tag: "Healthcare Sector", 
-                img: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=2000&auto=format&fit=crop", 
-                challenge: "High sensitivity to false positives in fall detection, and an absolute zero-latency requirement for medical dispatch.",
-                tech: "AI-driven biometric sensors, H2X dispatch engine, and localized edge computing.",
-                edge: "Bypassing Telecom Delays. Our system talks directly to paramedic APIs in milliseconds, transmitting the patient's coordinates and medical profile, saving critical minutes.",
+                title: "Autonomous Care Facility", tag: "Advanced Healthcare", 
+                img: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1500&auto=format&fit=crop", 
+                challenge: "Fragile elderly residents required constant monitoring, but wearable panic buttons were frequently forgotten, leading to life-threatening delays.",
+                tech: "AI-driven optical thermal arrays, H2X localized dispatch engine, and biometric pattern recognition algorithms.",
+                edge: "Pre-emptive Rescue. We engineered an invisible grid that doesn't just detect falls, it predicts them. Upon anomaly detection, it bypasses human verification, locking off non-essential zones and guiding paramedics directly to the patient's room in under 3 seconds.",
                 gallery: ["https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?q=80&w=800&auto=format&fit=crop", "https://images.unsplash.com/photo-1556912167-f556f1f39fdf?q=80&w=800&auto=format&fit=crop", "https://images.unsplash.com/photo-1615873968403-89e068629265?q=80&w=800&auto=format&fit=crop"] 
             },
             3: { 
-                title: "Nexus Corporate Hub", tag: "Enterprise / Commercial", 
-                img: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000&auto=format&fit=crop", 
-                challenge: "Managing 300+ employees with complex access hierarchies while maintaining strict corporate data compliance against cyber threats.",
-                tech: "Enterprise-grade firewalls, biometric access nodes, and energy-optimization algorithms.",
-                edge: "The Ultimate Dashboard. We unified fire safety, physical access control, and HVAC into a single impenetrable VLAN architecture, reducing the corporation's insurance premiums by 40%.",
+                title: "Nexus 50-Story Hub", tag: "Corporate Citadel", 
+                img: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1500&auto=format&fit=crop", 
+                challenge: "Processing over 10,000 real-time security events daily across a massive commercial skyscraper without creating a single point of failure.",
+                tech: "Enterprise-grade firewalls, biometric access nodes, and RTOS-optimized energy load balancing.",
+                edge: "Impenetrable Citadel. We subjected the building's infrastructure to a simulated state-sponsored cyber attack. Our VLAN-segregated architecture thwarted the penetration entirely, proving our military-grade resilience and securing a 40% insurance premium reduction for the client.",
                 gallery: ["https://images.unsplash.com/photo-1497215842964-222b330d4104?q=80&w=800&auto=format&fit=crop", "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=800&auto=format&fit=crop", "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=800&auto=format&fit=crop"] 
             },
             4: { 
-                title: "Pearl Seaside Resort", tag: "Hospitality Safety", 
-                img: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=2000&auto=format&fit=crop", 
-                challenge: "High humidity environment damaging standard sensors, massive scale (120 suites), and absolute guest privacy concerns.",
-                tech: "IP67-rated industrial sensors, anonymized thermal imaging, and a centralized RTOS hub.",
-                edge: "Invisible Safety. Zero cameras inside the suites, yet the system detects fires instantly and automatically initiates evacuation routing via smart corridor lighting to guide guests to safety.",
+                title: "The Pearl Island Resort", tag: "5-Star Hospitality", 
+                img: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1500&auto=format&fit=crop", 
+                challenge: "Extreme ocean humidity causing legacy fire sensors to fail, combined with absolute zero-tolerance for false alarms in VIP suites.",
+                tech: "IP67-rated industrial bio-sensors, anonymized thermal imaging, and a localized RTOS command hub.",
+                edge: "Invisible Safety Protocol. There are zero cameras inside the suites to ensure VIP privacy. Yet, if a fire sparks, our system isolates the HVAC, illuminates smart floor escape vectors, and alerts civil defense before the first wisp of smoke is even visible to the human eye.",
                 gallery: ["https://images.unsplash.com/photo-1618773928120-2c7bb1ad53d4?q=80&w=800&auto=format&fit=crop", "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?q=80&w=800&auto=format&fit=crop", "https://images.unsplash.com/photo-1564501049412-61c2a3083791?q=80&w=800&auto=format&fit=crop"] 
             },
             5: { 
-                title: "Cairo Smart Compound", tag: "Gated Community", 
-                img: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2000&auto=format&fit=crop", 
-                challenge: "Integrating 50 independent units while maintaining centralized security dispatch without compromising individual home data privacy.",
-                tech: "Multi-tenant cloud architecture, end-to-end AES-256 encryption, and automated gate protocols.",
-                edge: "Military-Grade Compartmentalization. A cyber breach in one home's local network mathematically cannot spread to the compound's master grid, ensuring community-wide safety.",
-                gallery: ["https://images.unsplash.com/photo-1449844908441-8829872d2607?q=80&w=800&auto=format&fit=crop", "https://images.unsplash.com/photo-1605276374104-a64115b713e4?q=80&w=800&auto=format&fit=crop", "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800&auto=format&fit=crop"] 
+                title: "Cairo Mega-Compound", tag: "Decentralized City", 
+                img: "https://images.unsplash.com/photo-1449844908441-8829872d2607?q=80&w=1500&auto=format&fit=crop", 
+                challenge: "Networking 500+ independent luxury homes into a central emergency dispatch without ever crossing or exposing private homeowner data.",
+                tech: "Decentralized mesh networking, end-to-end AES-256 encryption, and automated compound gate routing.",
+                edge: "The Unbreakable Mesh. We eliminated the central server vulnerability. If a localized node is destroyed or hacked, the rest of the 500-home mesh instantly recalibrates, ensuring the compound's overarching defense grid remains impenetrable.",
+                gallery: ["https://images.unsplash.com/photo-1605276374104-a64115b713e4?q=80&w=800&auto=format&fit=crop", "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800&auto=format&fit=crop", "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop"] 
             },
             6: { 
-                title: "ElderCare System", tag: "Assisted Living", 
-                img: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2000&auto=format&fit=crop", 
-                challenge: "Fragile residents requiring instant response to complex medical emergency scenarios without wearing bulky devices.",
-                tech: "Heart-rate anomaly triggers, smart-lock API integrations, and wearable-to-infrastructure sync.",
-                edge: "Automatic Physical Access. If a patient collapses, the system automatically unlocks their specific door for medics and locks off non-essential zones, guiding the response team directly.",
-                gallery: ["https://images.unsplash.com/photo-1538108149393-fbbd81895907?q=80&w=800&auto=format&fit=crop", "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop", "https://images.unsplash.com/photo-1551281030-c752c0f99485?q=80&w=800&auto=format&fit=crop"] 
+                title: "SecureLife Care Center", tag: "Assisted Living", 
+                img: "https://images.unsplash.com/photo-1538108149393-fbbd81895907?q=80&w=1500&auto=format&fit=crop", 
+                challenge: "Paramedics frequently faced delays waiting for manual keys to access locked patient rooms during sudden cardiac arrests.",
+                tech: "Heart-rate anomaly triggers, smart-lock API integrations, and wearable-to-infrastructure hyper-sync.",
+                edge: "The Ghost Key Protocol. When a patient's vitals drop critically, our system doesn't just call an ambulance. It automatically disengages the electronic lock on that specific room while securing the rest of the wing, slashing response times by a verified 74%.",
+                gallery: ["https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop", "https://images.unsplash.com/photo-1551281030-c752c0f99485?q=80&w=800&auto=format&fit=crop", "https://images.unsplash.com/photo-1527613426441-4da17471b66d?q=80&w=800&auto=format&fit=crop"] 
             }
         };
 
         const modal = document.getElementById('projectModal');
-        
         function openModal(id) {
             const data = projects[id];
             document.getElementById('mImg').src = data.img;
             document.getElementById('mTag').innerText = data.tag;
             document.getElementById('mTitle').innerText = data.title;
-            
             document.getElementById('mChallenge').innerText = data.challenge;
             document.getElementById('mTech').innerText = data.tech;
             document.getElementById('mEdge').innerText = data.edge;
@@ -621,7 +482,6 @@
             modal.classList.add('active');
             document.body.classList.add('modal-open');
         }
-        
         function closeModal() {
             modal.classList.remove('active');
             document.body.classList.remove('modal-open');
